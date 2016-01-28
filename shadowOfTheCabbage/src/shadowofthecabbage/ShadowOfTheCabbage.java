@@ -5,6 +5,7 @@
  */
 package shadowofthecabbage;
 
+import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Player;
 
 /**
@@ -24,6 +25,10 @@ public class ShadowOfTheCabbage {
        
        String playerInfo = playerOne.toString();
        System.out.println(playerInfo);
+       
+       Game gameOne = new Game();
+       
+       gameOne.set
     }
     
 }
