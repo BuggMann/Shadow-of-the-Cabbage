@@ -7,6 +7,7 @@ package shadowofthecabbage;
 
 import byui.cit260.shadowOfTheCabbage.model.Location;
 import byui.cit260.shadowOfTheCabbage.model.Player;
+import byui.cit260.shadowOfTheCabbage.model.RegularScene;
 
 /**
  *
@@ -34,6 +35,15 @@ public class ShadowOfTheCabbage {
        
        String locationInfo = locationOne.toString();
        System.out.println(locationInfo);
+       
+       RegularScene regForest = new RegularScene();
+       
+       regForest.setDescription("This is a regular forest");
+       regForest.setHint("This is a hint");
+       regForest.setSymbol("??");
+       
+       String regScene = regForest.toString();
+       System.out.println(regScene);
     }
     
 }
