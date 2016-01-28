@@ -5,7 +5,11 @@
  */
 package shadowofthecabbage;
 
+
 import byui.cit260.shadowOfTheCabbage.model.Game;
+
+import byui.cit260.shadowOfTheCabbage.model.Location;
+
 import byui.cit260.shadowOfTheCabbage.model.Player;
 
 /**
@@ -26,9 +30,20 @@ public class ShadowOfTheCabbage {
        String playerInfo = playerOne.toString();
        System.out.println(playerInfo);
        
+
        Game gameOne = new Game();
        
-       gameOne.set
+       
+
+       Location locationOne = new Location();
+       
+       locationOne.setRow(4);
+       locationOne.setColumn(3);
+       locationOne.setVisited(true);
+       
+       String locationInfo = locationOne.toString();
+       System.out.println(locationInfo);
+
     }
     
 }
