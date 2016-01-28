@@ -33,7 +33,10 @@ public class ShadowOfTheCabbage {
 
        Game gameOne = new Game();
        
+       gameOne.setTotalTime(3);
        
+       String gameInfo = gameOne.toString();
+       System.out.println(gameInfo);
 
        Location locationOne = new Location();
        

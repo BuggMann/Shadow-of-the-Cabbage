@@ -13,29 +13,29 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
     
-    private double getTime;
+    private double totalTime;
 
     public Game() {
     } 
   
-    public double getGetTime() {
-        return getTime;
+    public double getTotalTime() {
+        return totalTime;
     }
 
-    public void setGetTime(double getTime) {
-        this.getTime = getTime;
+    public void setTotalTime(double totalTime) {
+        this.totalTime = totalTime;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 11 * hash + (int) (Double.doubleToLongBits(this.getTime) ^ (Double.doubleToLongBits(this.getTime) >>> 32));
+        hash = 11 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "getTime=" + getTime + '}';
+        return "Game{" + "getTime=" + totalTime + '}';
     }
     
     
@@ -52,7 +52,7 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.getTime) != Double.doubleToLongBits(other.getTime)) {
+        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
         return true;
