@@ -69,6 +69,31 @@ public class ShadowOfTheCabbage {
        
        String inventoryInfo = inventoryOne.toString();
        System.out.println(inventoryInfo);
+       
+       Player playerOne = new Player();
+       
+       playerOne.setName("Mighty Cannon");
+       playerOne.setBossesKilled(4);
+       
+       String playerInfo = playerOne.toString();
+       System.out.println(playerInfo);
+       
+       PuzzleScene puzzleOne = new PuzzleScene();
+       
+       puzzleOne.setDoor(true);
+       puzzleOne.setPuzzle("This is the Puzzle.");
+       
+       String puzzleInfo = puzzleOne.toString();
+       System.out.println(puzzleInfo);
+       
+       RegularScene sceneOne = new RegularScene();
+       
+       sceneOne.setDescription("This is a forest");
+       sceneOne.setHint("This is the hint");
+       sceneOne.setSymbol("??");
+       
+       String sceneInfo = sceneOne.toString();
+       System.out.println(sceneInfo);
 
     }
     
