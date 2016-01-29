@@ -6,9 +6,12 @@
 package shadowofthecabbage;
 
 
+import byui.cit260.shadowOfTheCabbage.model.Actor;
 import byui.cit260.shadowOfTheCabbage.model.Game;
+import byui.cit260.shadowOfTheCabbage.model.Inventory;
 
 import byui.cit260.shadowOfTheCabbage.model.Location;
+import byui.cit260.shadowOfTheCabbage.model.Map;
 
 import byui.cit260.shadowOfTheCabbage.model.Player;
 
@@ -22,15 +25,7 @@ public class ShadowOfTheCabbage {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Player playerOne = new Player();
        
-       playerOne.setName("Mighty Cannon");
-       playerOne.setBossesKilled(4);
-       
-       String playerInfo = playerOne.toString();
-       System.out.println(playerInfo);
-       
-
        Game gameOne = new Game();
        
        gameOne.setTotalTime(3);
@@ -46,6 +41,32 @@ public class ShadowOfTheCabbage {
        
        String locationInfo = locationOne.toString();
        System.out.println(locationInfo);
+       
+       Actor actorOne = new Actor();
+       
+       actorOne.setActorName("Dennis");
+       actorOne.setDescription("A tall scary man");
+       actorOne.setLocation(4);
+       
+       String actorInfo = actorOne.toString();
+       System.out.println(actorInfo);
+       
+       Map mapOne = new Map();
+       
+       mapOne.setRowCount(6);
+       mapOne.setColumnCount(6);
+       
+       String mapInfo = mapOne.toString();
+       System.out.println(mapInfo);
+       
+       Inventory inventoryOne = new Inventory();
+       
+       inventoryOne.setItemType("sword");
+       inventoryOne.setItemName("jagged knife");
+       inventoryOne.setDescription("A really jagged knife");
+       
+       String inventoryInfo = inventoryOne.toString();
+       System.out.println(inventoryInfo);
 
     }
     
