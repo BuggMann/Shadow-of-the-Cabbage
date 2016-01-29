@@ -6,10 +6,12 @@
 package shadowofthecabbage;
 
 
-import byui.cit260.shadowOfTheCabbage.model.BossScene;
+import byui.cit260.shadowOfTheCabbage.model.Actor;
 import byui.cit260.shadowOfTheCabbage.model.Game;
+import byui.cit260.shadowOfTheCabbage.model.Inventory;
 
 import byui.cit260.shadowOfTheCabbage.model.Location;
+import byui.cit260.shadowOfTheCabbage.model.Map;
 
 import byui.cit260.shadowOfTheCabbage.model.Player;
 import byui.cit260.shadowOfTheCabbage.model.PuzzleScene;
@@ -25,15 +27,7 @@ public class ShadowOfTheCabbage {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Player playerOne = new Player();
        
-       playerOne.setName("Mighty Cannon");
-       playerOne.setBossesKilled(4);
-       
-       String playerInfo = playerOne.toString();
-       System.out.println(playerInfo);
-       
-
        Game gameOne = new Game();
        
        gameOne.setTotalTime(3);
@@ -50,31 +44,32 @@ public class ShadowOfTheCabbage {
        String locationInfo = locationOne.toString();
        System.out.println(locationInfo);
        
-       RegularScene regForest = new RegularScene();
+       Actor actorOne = new Actor();
        
-       regForest.setDescription("This is a regular forest");
-       regForest.setHint("This is a hint");
-       regForest.setSymbol("??");
+       actorOne.setActorName("Dennis");
+       actorOne.setDescription("A tall scary man");
+       actorOne.setLocation(4);
        
-       String regScene = regForest.toString();
-       System.out.println(regScene);
+       String actorInfo = actorOne.toString();
+       System.out.println(actorInfo);
        
-       BossScene firstBoss = new BossScene();
+       Map mapOne = new Map();
        
-       firstBoss.setEnemy("Big Boss");
-       firstBoss.setFinished(true);
+       mapOne.setRowCount(6);
+       mapOne.setColumnCount(6);
        
-       String firstBossInfo = firstBoss.toString();
-       System.out.println(firstBossInfo);
+       String mapInfo = mapOne.toString();
+       System.out.println(mapInfo);
        
-       PuzzleScene puzzleOne = new PuzzleScene();
+       Inventory inventoryOne = new Inventory();
        
-       puzzleOne.setDoor(true);
-       puzzleOne.setPuzzle("This is the puzzle.");
+       inventoryOne.setItemType("sword");
+       inventoryOne.setItemName("jagged knife");
+       inventoryOne.setDescription("A really jagged knife");
        
-       String puzzleInfo = puzzleOne.toString();
-       System.out.println(puzzleInfo);
-       
+       String inventoryInfo = inventoryOne.toString();
+       System.out.println(inventoryInfo);
+
     }
     
 }
