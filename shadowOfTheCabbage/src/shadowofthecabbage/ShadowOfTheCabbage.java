@@ -6,11 +6,13 @@
 package shadowofthecabbage;
 
 
+import byui.cit260.shadowOfTheCabbage.model.BossScene;
 import byui.cit260.shadowOfTheCabbage.model.Game;
 
 import byui.cit260.shadowOfTheCabbage.model.Location;
 
 import byui.cit260.shadowOfTheCabbage.model.Player;
+import byui.cit260.shadowOfTheCabbage.model.PuzzleScene;
 import byui.cit260.shadowOfTheCabbage.model.RegularScene;
 
 /**
@@ -56,6 +58,23 @@ public class ShadowOfTheCabbage {
        
        String regScene = regForest.toString();
        System.out.println(regScene);
+       
+       BossScene firstBoss = new BossScene();
+       
+       firstBoss.setEnemy("Big Boss");
+       firstBoss.setFinished(true);
+       
+       String firstBossInfo = firstBoss.toString();
+       System.out.println(firstBossInfo);
+       
+       PuzzleScene puzzleOne = new PuzzleScene();
+       
+       puzzleOne.setDoor(true);
+       puzzleOne.setPuzzle("This is the puzzle.");
+       
+       String puzzleInfo = puzzleOne.toString();
+       System.out.println(puzzleInfo);
+       
     }
     
 }
