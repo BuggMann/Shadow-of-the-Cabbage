@@ -7,6 +7,7 @@ package shadowofthecabbage;
 
 
 import byui.cit260.shadowOfTheCabbage.model.Actor;
+import byui.cit260.shadowOfTheCabbage.model.BossScene;
 import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Inventory;
 
@@ -94,6 +95,14 @@ public class ShadowOfTheCabbage {
        
        String sceneInfo = sceneOne.toString();
        System.out.println(sceneInfo);
+       
+       BossScene bossOne = new BossScene();
+       
+       bossOne.setEnemy("This is a big boss");
+       bossOne.setFinished(true);
+       
+       String bossInfo = bossOne.toString();
+       System.out.println(bossInfo);
 
     }
     
