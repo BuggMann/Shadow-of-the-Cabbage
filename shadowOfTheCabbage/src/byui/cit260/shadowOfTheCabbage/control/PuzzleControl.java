@@ -27,4 +27,21 @@ public class PuzzleControl {
         
         return volume;
     }
+    
+    public static double calcAngle(double height, double distance) { 
+	if (height < 1 || height > 75) {
+	
+            return - 1;
+        }
+        
+        if (distance < 1 || distance > 75) {
+		
+            return - 2;
+        }   
+	
+        double angle = Math.sqrt(Math.pow(height,2)+ Math.pow(distance,2));
+		
+        return angle;
+    }
+
 }
