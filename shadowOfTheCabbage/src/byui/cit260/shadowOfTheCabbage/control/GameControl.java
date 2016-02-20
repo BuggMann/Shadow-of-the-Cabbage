@@ -14,7 +14,7 @@ import shadowofthecabbage.ShadowOfTheCabbage;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playersName) {
+    public static Player createPlayer(String name) {
         if (name == null) {
             return null;
         }
