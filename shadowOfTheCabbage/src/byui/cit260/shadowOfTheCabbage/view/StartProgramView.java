@@ -93,14 +93,14 @@ public class StartProgramView {
             return false;
         }
         
-        this.displayNextView();
+        this.displayNextView(player);
         
         return true; // success
     }
 
     private void displayNextView(Player player) {
        System.out.println("\n====================================="
-                         + "\n Welcome to the game " + player.getName() 
+                         + "\n Welcome to the game, " + player.getName() 
                          + "\n We hope you have a lot of fun!!"
                          + "\n====================================="
                          );
