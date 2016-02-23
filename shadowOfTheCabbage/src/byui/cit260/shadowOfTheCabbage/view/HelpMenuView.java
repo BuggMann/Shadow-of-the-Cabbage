@@ -6,7 +6,6 @@
 package byui.cit260.shadowOfTheCabbage.view;
 
 import byui.cit260.shadowOfTheCabbage.control.GameControl;
-import java.awt.Choice;
 import java.util.Scanner;
 import shadowofthecabbage.ShadowOfTheCabbage;
 
@@ -14,21 +13,20 @@ import shadowofthecabbage.ShadowOfTheCabbage;
  *
  * @author Scott
  */
-public class MainMenuView {
+public class HelpMenuView {
     private String menu;
 
-    public MainMenuView() {
+    public HelpMenuView() {
     this.menu = "\n"
               + "\n------------------------"
-              + "\n| Main Menu            |"
+              + "\n| Help Menu            |"
               + "\n------------------------"
-              + "\nN - New Game"
-              + "\nL - Load Game"
-              + "\nS - Save Game"
-              + "\nH - Help Menu"
+              + "\nA - Action Menu"
+              + "\nC - Displays A Cabbage"
+              + "\nI - Displays Inventory"
               + "\nQ - Quit";
     }
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
         
         boolean done = false;
         do {
@@ -68,17 +66,14 @@ public class MainMenuView {
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "N":
-                this.startNewGame();
+            case "A":
+                this.displayActionMenu();
                 break;
-            case "L":
-                this.loadGame();
+            case "C":
+                this.displayCabbage();
                 break;
-            case "S":
-                this.saveGame();
-                break;
-            case "H":
-                this.displayHelpMenuView();
+            case "I":
+                this.displayInventory();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -88,25 +83,17 @@ public class MainMenuView {
         return false;
     }
 
-    private void startNewGame() {
-       GameControl.createNewGame(ShadowOfTheCabbage.getPlayer()); 
-       
-       GameMenuView gameMenu = new GameMenuView();
-       gameMenu.displayMenu();
+    private void displayActionMenu() {
+       System.out.println("*** displayActionMenu function Called ***");
     }
 
-    private void loadGame() {
-        System.out.println("*** loadGame function Called ***");
+    private void displayCabbage() {
+        System.out.println("*** displayCabbage function Called ***");
     }
 
-    private void saveGame() {
-        System.out.println("*** saveGame function Called ***");
-    }
-
-    private void displayHelpMenuView() {
-       
-       HelpMenuView helpMenu = new HelpMenuView();
-       helpMenu.displayHelpMenuView();
+    private void displayInventory() {
+        System.out.println("*** displayInventory function Called ***");
     }
        
 }
+

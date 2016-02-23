@@ -13,6 +13,10 @@ import shadowofthecabbage.ShadowOfTheCabbage;
  * @author heapc_000
  */
 public class GameControl {
+    
+    public static void createNewGame(Player player) {
+        System.out.println("\n*** createNewGame Stub funtion called***");
+    }
 
     public static Player createPlayer(String name) {
         if (name == null) {
