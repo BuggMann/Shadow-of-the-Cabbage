@@ -93,7 +93,7 @@ public class StartProgramView {
             return false;
         }
         
-        this.displayNextView();
+        this.displayNextView(player);
         
         return true; // success
     }
