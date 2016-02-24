@@ -25,7 +25,7 @@ public class HelpMenuView {
               + "\nC - Displays A Cabbage"
               + "\nI - Displays Inventory"
               + "\nT - Displays Trophy Menu"
-              + "\nQ - Quit";
+              + "\nB - Back (Main Menu)";
     }
     public void displayHelpMenuView() {
         
