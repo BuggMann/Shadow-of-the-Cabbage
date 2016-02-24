@@ -24,7 +24,7 @@ public class HelpMenuView {
               + "\nA - Action Menu"
               + "\nC - Displays A Cabbage"
               + "\nI - Displays Inventory"
-              + "\nQ - Quit";
+              + "\nB - Back (Main Menu)";
     }
     public void displayHelpMenuView() {
         
@@ -32,7 +32,7 @@ public class HelpMenuView {
         do {
             
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
+            if (menuOption.toUpperCase().equals("B"))
                 return;
             
             done = this.doAction(menuOption);
@@ -66,13 +66,13 @@ public class HelpMenuView {
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "A":
+            case "A": //display action menu
                 this.displayActionMenu();
                 break;
-            case "C":
+            case "C": //display cabbage
                 this.displayCabbage();
                 break;
-            case "I":
+            case "I": //display inventory
                 this.displayInventory();
                 break;
             default:
@@ -84,11 +84,18 @@ public class HelpMenuView {
     }
 
     private void displayActionMenu() {
-       System.out.println("*** displayActionMenu function Called ***");
+       ActionMenuView actionMenu = new ActionMenuView();
+       actionMenu.displayActionMenuView();
     }
 
     private void displayCabbage() {
-        System.out.println("*** displayCabbage function Called ***");
+        System.out.println("        .-~~~~-.\n" +
+                           "       /  ( ( ' \\\n" +
+                           "      | ( )   )  |\n" +
+                           "      \\ ) ' }  / /\n" +
+                           "      (` \\ , /  ~)\n" +
+                           "       `-.`\\/_.-'\n" +
+                           "          `\"\"");
     }
 
     private void displayInventory() {
