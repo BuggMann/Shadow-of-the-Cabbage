@@ -24,6 +24,7 @@ public class HelpMenuView {
               + "\nA - Action Menu"
               + "\nC - Displays A Cabbage"
               + "\nI - Displays Inventory"
+              + "\nT - Displays Trophy Menu"
               + "\nQ - Quit";
     }
     public void displayHelpMenuView() {
@@ -75,6 +76,9 @@ public class HelpMenuView {
             case "I":
                 this.displayInventory();
                 break;
+            case "T":
+                this.displayTrophyMenu();
+                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                 break;
@@ -93,6 +97,11 @@ public class HelpMenuView {
 
     private void displayInventory() {
         System.out.println("*** displayInventory function Called ***");
+    }
+
+    private void displayTrophyMenu() {
+        TrophyMenuView trophyMenu = new TrophyMenuView();
+        trophyMenu.displayTrophyMenuView();
     }
        
 }
