@@ -26,6 +26,7 @@ public class MainMenuView {
               + "\nL - Load Game"
               + "\nS - Save Game"
               + "\nH - Help Menu"
+              + "\nC - Cylinder View"
               + "\nQ - Quit";
     }
     public void displayMainMenuView() {
@@ -80,6 +81,9 @@ public class MainMenuView {
             case "H":
                 this.displayHelpMenuView();
                 break;
+            case "C":
+                this.displayCylinderView();
+                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                 break;
@@ -107,6 +111,11 @@ public class MainMenuView {
        
        HelpMenuView helpMenu = new HelpMenuView();
        helpMenu.displayHelpMenuView();
+    }
+
+    private void displayCylinderView() {
+        CylinderView volume = new CylinderView();
+        volume.displayCylinderView();
     }
        
 }

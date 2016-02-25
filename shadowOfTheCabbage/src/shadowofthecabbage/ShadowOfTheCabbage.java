@@ -29,6 +29,7 @@ public class ShadowOfTheCabbage {
     public static Game getCurrentGame() {
         return currentGame;
     }
+            
 
     public static void setCurrentGame(Game currentGame) {
         ShadowOfTheCabbage.currentGame = currentGame;

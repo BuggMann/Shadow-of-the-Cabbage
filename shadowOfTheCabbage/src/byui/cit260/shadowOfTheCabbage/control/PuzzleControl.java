@@ -23,7 +23,7 @@ public class PuzzleControl {
             return -1;
         }        
        
-        double volume = (Math.PI * Math.pow(radius, 2) * height);
+        double volume = Math.round((Math.PI * Math.pow(radius, 2) * height) * 100) / 100;
         
         return volume;
     }
@@ -42,6 +42,10 @@ public class PuzzleControl {
         double angle = Math.sqrt(Math.pow(height,2)+ Math.pow(distance,2));
 		
         return angle;
+    }
+
+    public static void openDoor() {
+        System.out.println("\n***openDoor Stub Function called : Door opened***");
     }
 
 }
