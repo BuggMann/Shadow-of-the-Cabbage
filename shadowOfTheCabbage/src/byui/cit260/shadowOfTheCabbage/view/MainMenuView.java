@@ -26,6 +26,7 @@ public class MainMenuView {
               + "\nL - Load Game"
               + "\nS - Save Game"
               + "\nH - Help Menu"
+              + "\nP - Puzzle"
               + "\nQ - Quit";
     }
     public void displayMainMenuView() {
@@ -80,6 +81,9 @@ public class MainMenuView {
             case "H":
                 this.displayHelpMenuView();
                 break;
+            case "P":
+                this.displayThrowPuzzleView();
+                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                 break;
@@ -108,5 +112,12 @@ public class MainMenuView {
        HelpMenuView helpMenu = new HelpMenuView();
        helpMenu.displayHelpMenuView();
     }
+
+    private void displayThrowPuzzleView() {
+       ThrowPuzzleView puzzleView = new ThrowPuzzleView();
+       puzzleView.displayThrowPuzzleView();
+    }
+
+   
        
 }

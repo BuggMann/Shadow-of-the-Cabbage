@@ -24,7 +24,7 @@ public class TrophyMenuView {
               + "\n3 - Third boss"
               + "\n4 - Fourth boss"
               + "\n5 - Fifth boss"
-              + "\nQ - Quit";
+              + "\nB - Back (Help Menu)";
     }
     public void displayTrophyMenuView() {
         
@@ -32,7 +32,7 @@ public class TrophyMenuView {
         do {
             
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
+            if (menuOption.toUpperCase().equals("B"))
                 return;
             
             done = this.doAction(menuOption);
@@ -119,7 +119,7 @@ public class TrophyMenuView {
     }
 
     private void displayThirdTrophy() {
-        System.out.println(".-=========-.\n" +
+        System.out.println("              .-=========-.\n" +
 "              \\'-=======-'/\n" +
 "              _|   .=.   |_\n" +
 "             ((|  {{3}}  |))\n" +
@@ -131,7 +131,7 @@ public class TrophyMenuView {
     }
 
     private void displayFourthTrophy() {
-        System.out.println(" ___________\n" +
+        System.out.println("              ___________\n" +
 "            '._==_==_=_.'\n" +
 "            .-\\:      /-.\n" +
 "           | (|:.     |) |\n" +
