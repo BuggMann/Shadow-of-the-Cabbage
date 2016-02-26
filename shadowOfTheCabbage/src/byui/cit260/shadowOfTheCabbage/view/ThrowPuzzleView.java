@@ -17,20 +17,21 @@ public class ThrowPuzzleView {
 
     public ThrowPuzzleView() {
     this.promptMessage = "\n"
-              + "\n--------------------------"
-              + "\n|      Boss Battle       |"
-              + "\n--------------------------"
-              + "\n You are on a ledge above "
-              + "\n a large room. You look   "
-              + "\n down and see a ugly beast."
-              + "\n You dont like the look of "
-              + "\n him and decide to throw a "
-              + "\n rock. Decide your height  "
-              + "\n and distance to target to "
-              + "\n get the perfect throw.    "
-              + "\n                           "
+              + "\n--------------------------------"
+              + "\n|         Boss Battle          |"
+              + "\n--------------------------------"
+              + "\n You are on a ledge above       "
+              + "\n a large room. You look         "
+              + "\n down and see a ugly beast.     "
+              + "\n You dont like the look of      "
+              + "\n him and decide to throw a      "
+              + "\n rock. Judge the cliff height   "
+              + "\n and distance to target to      "
+              + "\n get the perfect throw.         "
+              + "\n                                "
               + "\nB - Back"
-              + "\n  Please enter the Height  ";
+              + "\n                                "
+              + "\n  Please enter the cliff Height ";
     }
      public void displayThrowPuzzleView() {
         
@@ -67,26 +68,35 @@ public class ThrowPuzzleView {
       return value; // return the value entered
     }
 
-    private boolean doAction(String input) { 
+    private boolean doAction(String height) { 
         //convert height to double
-        double dHeight = Double.parseDouble(input);
+        double dHeight = Double.parseDouble(height);
         //set promptMessage equal to "enter the distance"
         this.promptMessage = "enter distance";
         //call getInput to get the distance entered
-        this.getInput();
+        String distance = this.getInput();
         //convert distance to a double
-        double dDistance = Double.parseDouble(input);
+        double dDistance = Double.parseDouble(distance);
         //call control function to perform task
-        PuzzleControl angle = new PuzzleControl();
-        angle.calcAngle(dHeight, dDistance);
-        //if control function is not succesful then display error message and return
-        if (angle != 75.4718){
-            System.out.println("\n missed your target try again ");
+        double angle = PuzzleControl.calcAngle(dHeight, dDistance);
+        
+        if (dHeight < 1 || dHeight > 75) {
+            System.out.println("invalid value, must be greater than 0 and less than 76");
+             return false;
         }
-        else if (angle == 75.4718){
-            System.out.println("\n The rock pierced the skull of the monster and he died.");
+        else if (dDistance < 1 || dDistance > 75) {
+            System.out.println("invalid value, must be greater than 0 and less than 76");
+             return false;
         }
-       return false; //if control function is succesful display "boss killed"   
+        else if (angle == 75.47){
+            System.out.println("Your throw was straight! The beast is dead!");
+        }
+        else {
+            System.out.println("you missed your mark, try again you threw  " + angle);
+        }
+        
+        return true;
+       //if control function is succesful display "boss killed"   
     }
 
    

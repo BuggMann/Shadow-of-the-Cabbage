@@ -26,7 +26,8 @@ public class MainMenuView {
               + "\nL - Load Game"
               + "\nS - Save Game"
               + "\nH - Help Menu"
-              + "\nP - Puzzle"
+              + "\nC - Cylinder View"
+              + "\nP - Puzzle View"
               + "\nQ - Quit";
     }
     public void displayMainMenuView() {
@@ -81,6 +82,9 @@ public class MainMenuView {
             case "H":
                 this.displayHelpMenuView();
                 break;
+            case "C":
+                this.displayCylinderView();
+                break;
             case "P":
                 this.displayThrowPuzzleView();
                 break;
@@ -113,11 +117,14 @@ public class MainMenuView {
        helpMenu.displayHelpMenuView();
     }
 
-    private void displayThrowPuzzleView() {
-       ThrowPuzzleView puzzleView = new ThrowPuzzleView();
-       puzzleView.displayThrowPuzzleView();
+    private void displayCylinderView() {
+        CylinderView volume = new CylinderView();
+        volume.displayCylinderView();
     }
-
-   
+    
+    private void displayThrowPuzzleView() {
+        ThrowPuzzleView angle = new ThrowPuzzleView();
+        angle.displayThrowPuzzleView();
+    }
        
 }
