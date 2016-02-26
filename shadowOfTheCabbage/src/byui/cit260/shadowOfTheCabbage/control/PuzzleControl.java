@@ -40,8 +40,11 @@ public class PuzzleControl {
         }   
 	
         double angle = Math.round((Math.sqrt(Math.pow(height,2)+ Math.pow(distance,2))) * 100.00) / 100.00;
-		
-        return angle;
+	
+        if (angle == 75.47){
+            return angle;
+        }
+        return -angle;
     }
 
     public static void openDoor() {
