@@ -17,9 +17,19 @@ public class CylinderView {
 
     public CylinderView() {
     this.promptMessage = "\n"
-              + "\nInput the height of your cylinder!"
+              + "\nYou see an incredibly large door"
+              + "\ncovered in giant skulls and other"
+              + "\nbones (which is super creepy). There"
+              + "\nis an inscription on the door which"
+              + "\nreads 'Only with the correct amount"
+              + "\nof water will this door open'"
+              + "\nThe cryptic message wants you to"
+              + "\ncalculate the right cylinder size to"
+              + "\npour into the door's slot"
               + "\n"
-              + "\nB - Back";
+              + "\nInput the height of your cylinder"
+              + "\n"
+              +"\nB - Back";
     }
     public void displayCylinderView() {
         
@@ -57,28 +67,32 @@ public class CylinderView {
       return value; // return the value entered
     }
 
-    private boolean doAction(String input) {
+    private boolean doAction(String height) {
         
         //convert height to double
-        double dHeight = Double.parseDouble(input);
+        double dHeight = Double.parseDouble(height);
         //set promptMessage = "Enter Distance"
         this.promptMessage = "input radius";
         //call getInput to get the distance entered
-        this.getInput();
+        String radius = this.getInput();
         //convert the distance to a double
-        double dRadius = Double.parseDouble(input);
+        double dRadius = Double.parseDouble(radius);
         //call PuzzleControl.calcCylinder
         double volume = PuzzleControl.calcCylinder(dHeight, dRadius);
         //if calcCylinder is not successful then display error and return
         if (volume == -1) {
             System.out.println("Invalid Value: Your height or radius is bigger than 37");
-            return false;
+            return true;
+        }
+        else if (volume < 0) {
+            System.out.println("The volume of that cylinder is: " + -volume + ", which is incorrect"
+                              +"\nTry Again");
+            return true;
         }
         else {
-            System.out.println("The volume of that cylinder is: " + volume);
+            System.out.println("Good job, You opened the door!");
             PuzzleControl.openDoor();
+            return true;
         }
-        
-        return true;
     }
 }

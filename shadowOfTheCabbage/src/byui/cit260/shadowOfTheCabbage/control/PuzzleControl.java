@@ -23,9 +23,12 @@ public class PuzzleControl {
             return -1;
         }        
        
-        double volume =Math.round((Math.PI * Math.pow(radius, 2) * height) * 100) / 100;
+        double volume =Math.round((Math.PI * Math.pow(radius, 2) * height) * 100.00) / 100.00;
         
-        return volume;
+        if (volume == 461.81) {
+            return volume;
+        }
+        return -volume;
     }
     
     public static double calcAngle(double height, double distance) { 
