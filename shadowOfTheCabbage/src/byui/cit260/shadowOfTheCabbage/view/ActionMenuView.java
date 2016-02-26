@@ -16,9 +16,9 @@ public class ActionMenuView {
 
     public ActionMenuView() {
     this.menu = "\n"
-              + "\n------------------------"
-              + "\n| Action menu          |"
-              + "\n------------------------"
+              + "\n-------------------------------------"
+              + "\n|           Action Menu              |"
+              + "\n-------------------------------------"
               + "\nMap - Displays map (abbreviated to 'M')"
               + "\nLook - Get a description of the current environment"
               + "\nOpen - Opens items that are not locked"
