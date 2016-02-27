@@ -23,7 +23,7 @@ public class PuzzleControl {
             return -1;
         }        
        
-        double volume =Math.round((Math.PI * Math.pow(radius, 2) * height) * 100.00) / 100.00;
+        double volume = Math.round((Math.PI * Math.pow(radius, 2) * height) * 100.00) / 100.00;
         
         if (volume == 461.81) {
             return volume;
