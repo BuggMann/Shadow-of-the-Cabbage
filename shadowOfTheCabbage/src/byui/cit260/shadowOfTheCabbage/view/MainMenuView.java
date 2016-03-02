@@ -14,11 +14,10 @@ import shadowofthecabbage.ShadowOfTheCabbage;
  *
  * @author Scott
  */
-public class MainMenuView {
-    private String menu;
-
-    public MainMenuView() {
-    this.menu = "\n"
+public class MainMenuView extends View {
+   
+        public MainMenuView(){
+            super("\n"
               + "\n------------------------"
               + "\n| Main Menu            |"
               + "\n------------------------"
@@ -28,48 +27,14 @@ public class MainMenuView {
               + "\nH - Help Menu"
               + "\nC - Cylinder View"
               + "\nP - Puzzle View"
-              + "\nQ - Quit";
+              + "\nQ - Quit");
     }
-    public void displayMainMenuView() {
+    @Override
+    public boolean doAction(String value) {
         
-        boolean done = false;
-        do {
-            
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-      String value = ""; // value to be returned
-      boolean valid = false; // initialize to not value
-      
-      while (!valid) { // loop while an invalid value is entered
-          System.out.println("\n" + this.menu);
-          
-          value = keyboard.nextLine(); // get next line typed on keyboard
-          value = value.trim(); // trim off leading and trail blanks
-          
-          if (value.length() < 1) { // value is blank
-              System.out.println("\nInvalid value: value can not be blank");
-          }
-          
-          break; // end the loop
-      }
-      
-      return value; // return the value entered
-    }
-
-    private boolean doAction(String choice) {
+        value = value.toUpperCase();
         
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (value) {
             case "N":
                 this.startNewGame();
                 break;
@@ -100,7 +65,7 @@ public class MainMenuView {
        GameControl.createNewGame(ShadowOfTheCabbage.getPlayer()); 
        
        GameMenuView gameMenu = new GameMenuView();
-       gameMenu.displayMenu();
+       gameMenu.display();
     }
 
     private void loadGame() {
@@ -114,17 +79,17 @@ public class MainMenuView {
     private void displayHelpMenuView() {
        
        HelpMenuView helpMenu = new HelpMenuView();
-       helpMenu.displayHelpMenuView();
+       helpMenu.display();
     }
 
     private void displayCylinderView() {
         CylinderView volume = new CylinderView();
-        volume.displayCylinderView();
+        volume.display();
     }
     
     private void displayThrowPuzzleView() {
         ThrowPuzzleView angle = new ThrowPuzzleView();
-        angle.displayThrowPuzzleView();
+        angle.display();
     }
        
 }

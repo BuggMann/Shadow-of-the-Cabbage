@@ -12,11 +12,10 @@ import java.util.Scanner;
  *
  * @author heapc_000
  */
-public class ThrowPuzzleView {
-    private String promptMessage;
+public class ThrowPuzzleView extends View{
 
     public ThrowPuzzleView() {
-    this.promptMessage = "\n"
+        super("\n"
               + "\n-------------------------------------"
               + "\n|            Boss Battle            |"
               + "\n-------------------------------------"
@@ -32,48 +31,14 @@ public class ThrowPuzzleView {
               + "\n"
               + "\nB - Back"
               + "\n"
-              + "\n  Please enter the cliff Height";
+              + "\n  Please enter the cliff Height");
     }
-     public void displayThrowPuzzleView() {
-        
-        boolean done = false;
-        do {
-            
-            String input = this.getInput();
-            if (input.toUpperCase().equals("B"))
-                return;
-            
-            done = this.doAction(input);
-            
-        } while (!done);
-    }
-
-    private String getInput() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-      String value = ""; // value to be returned
-      boolean valid = false; // initialize to not value
-      
-      while (!valid) { // loop while an invalid value is entered
-          System.out.println("\n" + this.promptMessage);
-          
-          value = keyboard.nextLine(); // get next line typed on keyboard
-          value = value.trim(); // trim off leading and trail blanks
-          
-          if (value.length() < 1) { // value is blank
-              System.out.println("\nInvalid value: value can not be blank");    
-          }
-          
-          break; // end the loop
-      }
-      
-      return value; // return the value entered
-    }
-
-    private boolean doAction(String height) { 
+    @Override
+    public boolean doAction(String height) { 
         //convert height to double
         double dHeight = Double.parseDouble(height);
         //set promptMessage equal to "enter the distance"
-        this.promptMessage = "enter distance";
+        this.displayMessage = "enter distance";
         //call getInput to get the distance entered
         String distance = this.getInput();
         //convert distance to a double

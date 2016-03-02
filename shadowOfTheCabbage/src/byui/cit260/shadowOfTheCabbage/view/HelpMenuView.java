@@ -13,11 +13,10 @@ import shadowofthecabbage.ShadowOfTheCabbage;
  *
  * @author Scott
  */
-public class HelpMenuView {
-    private String menu;
+public class HelpMenuView extends View{
 
     public HelpMenuView() {
-    this.menu = "\n"
+        super("\n"
               + "\n------------------------"
               + "\n| Help Menu            |"
               + "\n------------------------"
@@ -25,48 +24,14 @@ public class HelpMenuView {
               + "\nC - Displays A Cabbage"
               + "\nI - Displays Inventory"
               + "\nT - Displays Trophy Menu"
-              + "\nB - Back (Main Menu)";
+              + "\nB - Back (Main Menu)");
     }
-    public void displayHelpMenuView() {
+    @Override
+    public boolean doAction(String value) {
         
-        boolean done = false;
-        do {
-            
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("B"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-      String value = ""; // value to be returned
-      boolean valid = false; // initialize to not value
-      
-      while (!valid) { // loop while an invalid value is entered
-          System.out.println("\n" + this.menu);
-          
-          value = keyboard.nextLine(); // get next line typed on keyboard
-          value = value.trim(); // trim off leading and trail blanks
-          
-          if (value.length() < 1) { // value is blank
-              System.out.println("\nInvalid value: value can not be blank");
-          }
-          
-          break; // end the loop
-      }
-      
-      return value; // return the value entered
-    }
-
-    private boolean doAction(String choice) {
+        value = value.toUpperCase();
         
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (value) {
             case "A": //display action menu
                 this.displayActionMenu();
                 break;
@@ -89,7 +54,7 @@ public class HelpMenuView {
 
     private void displayActionMenu() {
        ActionMenuView actionMenu = new ActionMenuView();
-       actionMenu.displayActionMenuView();
+       actionMenu.display();
     }
 
     private void displayCabbage() {
@@ -108,7 +73,7 @@ public class HelpMenuView {
 
     private void displayTrophyMenu() {
         TrophyMenuView trophyMenu = new TrophyMenuView();
-        trophyMenu.displayTrophyMenuView();
+        trophyMenu.display();
     }
        
 }

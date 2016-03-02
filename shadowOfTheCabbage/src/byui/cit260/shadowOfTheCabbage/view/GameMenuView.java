@@ -9,8 +9,25 @@ package byui.cit260.shadowOfTheCabbage.view;
  *
  * @author Scott
  */
-class GameMenuView {
-    void displayMenu() {
-        System.out.println("\n*** displayMenu Stub funtion called***");
+class GameMenuView extends View{
+     public GameMenuView(){
+            super("\n"
+              + "\n------------------------"
+              + "\n| Game Menu            |"
+              + "\n------------------------"
+              + "\nN - New Game"
+              + "\nL - Load Game"
+              + "\nS - Save Game"
+              + "\nH - Help Menu"
+              + "\nC - Cylinder View"
+              + "\nP - Puzzle View"
+              + "\nQ - Quit");
     }
+
+    @Override
+    public boolean doAction(String value) {
+       System.out.println("\n this is a stub");
+       return false;
+    }
+    
 }
