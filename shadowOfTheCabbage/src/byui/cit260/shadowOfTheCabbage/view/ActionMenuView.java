@@ -11,11 +11,10 @@ import java.util.Scanner;
  *
  * @author Scott
  */
-public class ActionMenuView {
-    private String menu;
-
+public class ActionMenuView extends View{
+    
     public ActionMenuView() {
-    this.menu = "\n"
+        super("\n"
               + "\n-------------------------------------"
               + "\n|           Action Menu              |"
               + "\n-------------------------------------"
@@ -32,48 +31,14 @@ public class ActionMenuView {
               + "\nEast - Moves East"
               + "\nSouth - Moves South"
               + "\nWest - Moves North"
-              + "\nB - Go Back (Help Menu)";
+              + "\nB - Go Back (Help Menu)");
     }
-    public void displayActionMenuView() {
+    @Override
+    public boolean doAction(String value) {
         
-        boolean done = false;
-        do {
-            
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("B"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-      String value = ""; // value to be returned
-      boolean valid = false; // initialize to not value
-      
-      while (!valid) { // loop while an invalid value is entered
-          System.out.println("\n" + this.menu);
-          
-          value = keyboard.nextLine(); // get next line typed on keyboard
-          value = value.trim(); // trim off leading and trail blanks
-          
-          if (value.length() < 1) { // value is blank
-              System.out.println("\nInvalid value: value can not be blank");
-          }
-          
-          break; // end the loop
-      }
-      
-      return value; // return the value entered
-    }
-
-    private boolean doAction(String choice) {
+        value = value.toUpperCase();
         
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (value) {
             case "MAP": 
                 this.displayMap();
                 break;

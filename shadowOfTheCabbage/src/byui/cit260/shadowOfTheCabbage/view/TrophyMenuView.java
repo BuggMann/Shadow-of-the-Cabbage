@@ -11,11 +11,10 @@ import java.util.Scanner;
  *
  * @author heapc_000
  */
-public class TrophyMenuView {
-     private String menu;
+public class TrophyMenuView extends View{
 
     public TrophyMenuView() {
-    this.menu = "\n"
+    super("\n"
               + "\n------------------------"
               + "\n| Trophy Menu            |"
               + "\n------------------------"
@@ -24,48 +23,14 @@ public class TrophyMenuView {
               + "\n3 - Third boss"
               + "\n4 - Fourth boss"
               + "\n5 - Fifth boss"
-              + "\nB - Back (Help Menu)";
+              + "\nB - Back (Help Menu)");
     }
-    public void displayTrophyMenuView() {
+    @Override
+    public boolean doAction(String value) {
         
-        boolean done = false;
-        do {
-            
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("B"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-      String value = ""; // value to be returned
-      boolean valid = false; // initialize to not value
-      
-      while (!valid) { // loop while an invalid value is entered
-          System.out.println("\n" + this.menu);
-          
-          value = keyboard.nextLine(); // get next line typed on keyboard
-          value = value.trim(); // trim off leading and trail blanks
-          
-          if (value.length() < 1) { // value is blank
-              System.out.println("\nInvalid value: value can not be blank");
-          }
-          
-          break; // end the loop
-      }
-      
-      return value; // return the value entered
-    }
-
-    private boolean doAction(String choice) {
+        value = value.toUpperCase();
         
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
+        switch (value) {
             case "1":
                 this.displayFirstTrophy();
                 break;
