@@ -27,6 +27,7 @@ public class MainMenuView extends View {
               + "\nH - Help Menu"
               + "\nC - Cylinder View"
               + "\nP - Puzzle View"
+              + "\nF - Forrest View"
               + "\nQ - Quit");
     }
     @Override
@@ -52,6 +53,9 @@ public class MainMenuView extends View {
                 break;
             case "P":
                 this.displayThrowPuzzleView();
+                break;
+            case "F":
+                this.displayForestView();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -90,6 +94,11 @@ public class MainMenuView extends View {
     private void displayThrowPuzzleView() {
         ThrowPuzzleView angle = new ThrowPuzzleView();
         angle.display();
+    }
+    
+    private void displayForestView() {
+        ForestView forest = new ForestView();
+        forest.display();
     }
        
 }
