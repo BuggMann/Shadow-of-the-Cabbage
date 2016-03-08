@@ -27,7 +27,8 @@ public class MainMenuView extends View {
               + "\nH - Help Menu"
               + "\nC - Cylinder View"
               + "\nP - Puzzle View"
-              + "\nF - Forrest View"
+              + "\nF - Forest View"
+              + "\nO - First View"
               + "\nQ - Quit");
     }
     @Override
@@ -56,6 +57,9 @@ public class MainMenuView extends View {
                 break;
             case "F":
                 this.displayForestView();
+                break;
+            case "O":
+                this.displayFirstView();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -100,5 +104,10 @@ public class MainMenuView extends View {
         ForestView forest = new ForestView();
         forest.display();
     }
-       
+
+    private void displayFirstView() {
+        FirstView first = new FirstView();
+        first.display();
+    }
+     
 }

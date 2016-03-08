@@ -30,6 +30,7 @@ public class HintControl {
             return -3;
         }
         
-        return newDelay;
+        delay = newDelay;
+        return delay;
         }
 }

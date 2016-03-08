@@ -6,7 +6,6 @@
 package byui.cit260.shadowOfTheCabbage.view;
 
 import byui.cit260.shadowOfTheCabbage.control.PuzzleControl;
-import java.util.Scanner;
 
 /**
  *
