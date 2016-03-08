@@ -31,7 +31,7 @@ public class ActionMenuView extends View{
               + "\nEast - Moves East"
               + "\nSouth - Moves South"
               + "\nWest - Moves North"
-              + "\nB - Go Back (Help Menu)");
+              + "\nQ - Go Back (Help Menu)");
     }
     @Override
     public boolean doAction(String value) {
