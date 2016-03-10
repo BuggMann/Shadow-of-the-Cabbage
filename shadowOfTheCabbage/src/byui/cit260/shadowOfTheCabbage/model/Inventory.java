@@ -17,6 +17,8 @@ public class Inventory implements Serializable {
     private String itemType;
     private String itemName;
     private String description;
+    
+    private Game game;
 
     public Inventory() {
     }

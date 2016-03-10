@@ -16,6 +16,8 @@ public class Location implements Serializable{
     private double row;
     private double column;
     private boolean visited;
+    
+    private RegularScene regularScene;
 
     public Location() {
     }
