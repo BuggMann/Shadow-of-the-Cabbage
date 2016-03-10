@@ -17,6 +17,9 @@ public class Actor implements Serializable {
     private String actorName;
     private String description;
     private double location;
+    
+    private Player player;
+    private Game game;
 
     public Actor() {
     }
