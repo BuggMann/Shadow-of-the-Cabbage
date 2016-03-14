@@ -5,7 +5,11 @@
  */
 package byui.cit260.shadowOfTheCabbage.control;
 
+import byui.cit260.shadowOfTheCabbage.model.Game;
+import byui.cit260.shadowOfTheCabbage.model.Item;
+import byui.cit260.shadowOfTheCabbage.model.Map;
 import byui.cit260.shadowOfTheCabbage.model.Player;
+import java.util.ArrayList;
 import shadowofthecabbage.ShadowOfTheCabbage;
 
 /**
@@ -15,9 +19,21 @@ import shadowofthecabbage.ShadowOfTheCabbage;
 public class GameControl {
     
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame Stub funtion called***");
+        Game game = new Game();
+        ShadowOfTheCabbage.setCurrentGame(game);
+        
+        game.setPlayer(player);
+        
+        Item[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+        
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        
+        MapControl.moveActorsToStartingLocation(map);
     }
-
+    
+    
     public static Player createPlayer(String name) {
         if (name == null) {
             return null;
@@ -30,5 +46,6 @@ public class GameControl {
         
         return player;
     }
+    
     
 }

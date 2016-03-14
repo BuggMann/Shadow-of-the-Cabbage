@@ -31,6 +31,8 @@ public enum Actor implements Serializable {
     public Point getLocation() {
         return location;
     }
+    
+    
 
     @Override
     public String toString() {

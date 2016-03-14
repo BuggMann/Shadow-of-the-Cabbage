@@ -46,6 +46,16 @@ public class Location implements Serializable{
         this.visited = visited;
     }
 
+    public RegularScene getRegularScene() {
+        return regularScene;
+    }
+
+    public void setRegularScene(RegularScene regularScene) {
+        this.regularScene = regularScene;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 3;
