@@ -5,6 +5,7 @@
  */
 package byui.cit260.shadowOfTheCabbage.view;
 
+import byui.cit260.shadowOfTheCabbage.model.Item;
 import java.util.Scanner;
 
 /**
@@ -119,7 +120,11 @@ public class ActionMenuView extends View{
     }
 
     private void displayInventory() {
-        System.out.println("\n*** displayInventory() function called*** ");
+        Item[] items = Item.values();
+        
+        for (Item item: items){
+            System.out.println(Item.Sword, Item.Axe, Item.Spear, Item.Mace, Item.Bommerang, Item.Cabbage);
+        }
     }
 
     private void moveNorth() {

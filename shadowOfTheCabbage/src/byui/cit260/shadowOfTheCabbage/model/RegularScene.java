@@ -16,8 +16,10 @@ public class RegularScene implements Serializable{
     
     private String description;
     private String hint;
-    private String symbol;
-
+    private String mapSymbol;
+    private boolean blocked;
+     
+            
     public RegularScene() {
     }
     
@@ -37,20 +39,30 @@ public class RegularScene implements Serializable{
         this.hint = hint;
     }
 
-    public String getSymbol() {
-        return symbol;
+    public String getMapSymbol() {
+        return mapSymbol;
     }
 
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
+    public void setMapSymbol(String symbol) {
+        this.mapSymbol = mapSymbol;
     }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }
+    
+    
 
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 73 * hash + Objects.hashCode(this.description);
         hash = 73 * hash + Objects.hashCode(this.hint);
-        hash = 73 * hash + Objects.hashCode(this.symbol);
+        hash = 73 * hash + Objects.hashCode(this.mapSymbol);
         return hash;
     }
 
@@ -72,7 +84,7 @@ public class RegularScene implements Serializable{
         if (!Objects.equals(this.hint, other.hint)) {
             return false;
         }
-        if (!Objects.equals(this.symbol, other.symbol)) {
+        if (!Objects.equals(this.mapSymbol, other.mapSymbol)) {
             return false;
         }
         return true;
@@ -80,7 +92,7 @@ public class RegularScene implements Serializable{
 
     @Override
     public String toString() {
-        return "RegularScene{" + "description=" + description + ", hint=" + hint + ", symbol=" + symbol + '}';
+        return "RegularScene{" + "description=" + description + ", hint=" + hint + ", symbol=" + mapSymbol + '}';
     }
     
     
