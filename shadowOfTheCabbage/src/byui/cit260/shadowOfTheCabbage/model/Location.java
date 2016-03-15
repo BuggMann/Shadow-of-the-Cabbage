@@ -20,6 +20,7 @@ public class Location implements Serializable{
     private RegularScene regularScene;
 
     public Location() {
+        
     }
 
     public double getRow() {

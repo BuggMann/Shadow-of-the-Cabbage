@@ -5,6 +5,7 @@
  */
 package byui.cit260.shadowOfTheCabbage.view;
 
+import byui.cit260.shadowOfTheCabbage.control.MapControl;
 import java.util.Scanner;
 
 /**
@@ -87,7 +88,7 @@ public class ActionMenuView extends View{
     }
 
     private void displayMap() {
-        System.out.println("\n*** displayMap() function called*** ");
+        MapControl map = new MapControl.scenes[];
     }
 
     private void look() {

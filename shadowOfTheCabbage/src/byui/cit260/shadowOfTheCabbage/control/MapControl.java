@@ -8,6 +8,7 @@ package byui.cit260.shadowOfTheCabbage.control;
 import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Location;
 import byui.cit260.shadowOfTheCabbage.model.Map;
+import byui.cit260.shadowOfTheCabbage.model.RegularScene;
 import javafx.scene.Scene;
 import shadowofthecabbage.ShadowOfTheCabbage;
 
@@ -31,9 +32,9 @@ public class MapControl {
 
         Game game = ShadowOfTheCabbage.getCurrentGame();
 
-        Scene[] scenes = new Scene[SceneType.values().length];
+        RegularScene[] scenes = new RegularScene[SceneType.values().length];
 
-        Scene startingScene = new Scene();
+        RegularScene startingScene = new RegularScene();
         startingScene.setDescription(
         "\nYou find yourself at the top of a hill overlooking a very large valley"
         + "\nYou see forests, deserts a large lake a frozen tundra"
