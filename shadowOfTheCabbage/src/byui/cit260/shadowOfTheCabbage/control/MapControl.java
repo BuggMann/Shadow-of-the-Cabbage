@@ -203,26 +203,26 @@ public class MapControl {
        locations[0][2].setScene(scenes[SceneType.fBoss.ordinal()]); 
        locations[0][3].setScene(scenes[SceneType.cBoss.ordinal()]); 
        locations[0][4].setScene(scenes[SceneType.wBoss.ordinal()]); 
-       locations[0][5].setScene(scenes[SceneType.dBoss.ordinal()]); 
-       locations[0][6].setScene(scenes[SceneType.rBoss.ordinal()]); 
-       locations[0][7].setScene(scenes[SceneType.forest.ordinal()]); 
-       locations[0][8].setScene(scenes[SceneType.cave.ordinal()]); 
-       locations[0][9].setScene(scenes[SceneType.hoboJoe.ordinal()]); 
-       locations[1][0].setScene(scenes[SceneType.mountain.ordinal()]); 
-       locations[1][2].setScene(scenes[SceneType.lakeside.ordinal()]); 
-       locations[1][3].setScene(scenes[SceneType.meadow.ordinal()]); 
-       locations[1][4].setScene(scenes[SceneType.tower.ordinal()]); 
-       locations[1][5].setScene(scenes[SceneType.forest.ordinal()]); 
-       locations[1][6].setScene(scenes[SceneType.forest.ordinal()]); 
-       locations[1][7].setScene(scenes[SceneType.meadow.ordinal()]); 
-       locations[1][8].setScene(scenes[SceneType.meadow.ordinal()]); 
-       locations[1][9].setScene(scenes[SceneType.cave.ordinal()]); 
-       locations[2][0].setScene(scenes[SceneType.cave.ordinal()]); 
+       locations[1][0].setScene(scenes[SceneType.dBoss.ordinal()]); 
+       locations[1][1].setScene(scenes[SceneType.rBoss.ordinal()]); 
+       locations[1][2].setScene(scenes[SceneType.forest.ordinal()]); 
+       locations[1][3].setScene(scenes[SceneType.cave.ordinal()]); 
+       locations[1][4].setScene(scenes[SceneType.hoboJoe.ordinal()]); 
+       locations[2][0].setScene(scenes[SceneType.mountain.ordinal()]); 
        locations[2][1].setScene(scenes[SceneType.lakeside.ordinal()]); 
-       locations[2][2].setScene(scenes[SceneType.lakeside.ordinal()]); 
-       locations[2][3].setScene(scenes[SceneType.mountain.ordinal()]); 
-       locations[2][4].setScene(scenes[SceneType.mountain.ordinal()]); 
-       locations[2][5].setScene(scenes[SceneType.desert.ordinal()]); 
+       locations[2][2].setScene(scenes[SceneType.meadow.ordinal()]); 
+       locations[2][3].setScene(scenes[SceneType.tower.ordinal()]); 
+       locations[2][4].setScene(scenes[SceneType.forest.ordinal()]); 
+       locations[3][0].setScene(scenes[SceneType.forest.ordinal()]); 
+       locations[3][1].setScene(scenes[SceneType.meadow.ordinal()]); 
+       locations[3][2].setScene(scenes[SceneType.meadow.ordinal()]); 
+       locations[3][3].setScene(scenes[SceneType.cave.ordinal()]); 
+       locations[3][4].setScene(scenes[SceneType.cave.ordinal()]); 
+       locations[4][0].setScene(scenes[SceneType.lakeside.ordinal()]); 
+       locations[4][1].setScene(scenes[SceneType.lakeside.ordinal()]); 
+       locations[4][2].setScene(scenes[SceneType.mountain.ordinal()]); 
+       locations[4][3].setScene(scenes[SceneType.mountain.ordinal()]); 
+       locations[4][4].setScene(scenes[SceneType.desert.ordinal()]); 
     }
 
 }

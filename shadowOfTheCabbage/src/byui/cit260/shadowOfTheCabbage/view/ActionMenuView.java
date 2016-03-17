@@ -5,8 +5,13 @@
  */
 package byui.cit260.shadowOfTheCabbage.view;
 
+import byui.cit260.shadowOfTheCabbage.control.MapControl;
+import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Item;
+import byui.cit260.shadowOfTheCabbage.model.Location;
+import byui.cit260.shadowOfTheCabbage.model.Map;
 import java.util.Scanner;
+import shadowofthecabbage.ShadowOfTheCabbage;
 
 /**
  *
@@ -27,7 +32,7 @@ public class ActionMenuView extends View{
               + "\nUse - Use item already in inventory"
               + "\nAttack - Attempt attack on enemies"
               + "\nSave - Save game at current location"
-              + "\nInventory - List items currently held (abbreviated to 'I')"
+              + "\nInventory - display inventory"
               + "\nNorth - Moves North"
               + "\nEast - Moves East"
               + "\nSouth - Moves South"
@@ -40,7 +45,7 @@ public class ActionMenuView extends View{
         value = value.toUpperCase();
         
         switch (value) {
-            case "MAP": 
+            case "M": 
                 this.displayMap();
                 break;
             case "LOOK": 
@@ -49,22 +54,13 @@ public class ActionMenuView extends View{
             case "OPEN": 
                 this.open();
                 break;
-            case "TAKE": 
-                this.take();
-                break;
-            case "DROP": 
-                this.drop();
-                break;
             case "USE": 
                 this.use();
-                break;
-            case "ATTACK": 
-                this.attack();
                 break;
             case "SAVE": 
                 this.save();
                 break;
-            case "INVENTORY": 
+            case "I": 
                 this.displayInventory();
                 break;
             case "NORTH": 
@@ -88,31 +84,25 @@ public class ActionMenuView extends View{
     }
 
     private void displayMap() {
-        System.out.println("\n*** displayMap() function called*** ");
-    }
+        Location[][] locations = ShadowOfTheCabbage.getCurrentGame().getMap().getLocations();
+        for (int i = 0; i < locations.length; i++) {
+            System.out.println("\n------------------------------");
+            for (int j = 0; j < locations[0].length; j++) {
+            System.out.print("|    |");
+            }
+        }
+        }
 
     private void look() {
         System.out.println("\n*** look() function called*** ");
     }
-
+    
     private void open() {
         System.out.println("\n*** open() function called*** ");
     }
 
-    private void take() {
-        System.out.println("\n*** take() function called*** ");
-    }
-
-    private void drop() {
-        System.out.println("\n*** drop() function called*** ");
-    }
-
     private void use() {
         System.out.println("\n*** use() function called*** ");
-    }
-
-    private void attack() {
-        System.out.println("\n*** attack() function called*** ");
     }
 
     private void save() {
@@ -123,7 +113,7 @@ public class ActionMenuView extends View{
         Item[] items = Item.values();
         
         for (Item item: items){
-            System.out.println(Item.Sword, Item.Axe, Item.Spear, Item.Mace, Item.Bommerang, Item.Cabbage);
+            System.out.println(item.getItemName() + " - " + item.getDescription());
         }
     }
 
