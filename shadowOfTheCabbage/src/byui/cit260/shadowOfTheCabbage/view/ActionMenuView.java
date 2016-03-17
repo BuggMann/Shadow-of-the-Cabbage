@@ -86,13 +86,14 @@ public class ActionMenuView extends View{
     private void displayMap() {
         Location[][] locations = ShadowOfTheCabbage.getCurrentGame().getMap().getLocations();
         for (int i = 0; i < locations.length; i++) {
-            System.out.println("\n------------------------------");
+            System.out.println("\n--------------------------");
             for (int j = 0; j < locations[0].length; j++) {
                 String symbol = locations[i][j].getScene().getMapSymbol();
-            System.out.print("| " + symbol + " |");
+            System.out.print("| " + symbol + " ");
             }
+            System.out.print("|");
         }
-        System.out.println("\n------------------------------");
+        System.out.println("\n--------------------------");
         }
 
     private void look() {
