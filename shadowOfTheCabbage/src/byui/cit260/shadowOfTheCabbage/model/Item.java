@@ -13,10 +13,10 @@ import java.util.Objects;
  * @author heapc_000
  */
 public enum Item implements Serializable {
-    Sword("weapon", "Jezebel", "As dangerous as a contentious and angry woman"),
+    Sword("weapon", "Jezebel", "A sword as dangerous as a contentious and angry woman"),
     Axe("weapon", "Axcalibur", "Some say it was pulled from a stone.. or was it a log"),
-    Spear("weapon", "The Point", "Get to the point!"),
-    Mace("weapon", "Windu", "created in a galaxy far far away. Not sure how it got into your inventory"),
+    Spear("weapon", "The Point", "A spear, thats the point!"),
+    Mace("weapon", "Windu", "A mace created in a galaxy far far away. Not sure how it got into your inventory"),
     Bommerang("weapon", "Glorp", "One boomerang to rule them all. Forged in the firey depths of Mount Boom"),
     Cabbage("food", "The Cabbage", "A leafy green");
     

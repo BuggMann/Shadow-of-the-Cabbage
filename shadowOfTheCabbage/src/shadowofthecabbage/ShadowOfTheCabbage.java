@@ -17,7 +17,7 @@ import byui.cit260.shadowOfTheCabbage.view.StartProgramView;
  */
 public class ShadowOfTheCabbage {
 
-    private static Game currentGame = null;
+    private static Game currentGame;
     private static Player player = null;
     
     public static void main(String[] args) {

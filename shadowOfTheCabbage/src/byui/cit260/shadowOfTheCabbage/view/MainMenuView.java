@@ -6,6 +6,7 @@
 package byui.cit260.shadowOfTheCabbage.view;
 
 import byui.cit260.shadowOfTheCabbage.control.GameControl;
+import byui.cit260.shadowOfTheCabbage.model.Item;
 import java.awt.Choice;
 import java.util.Scanner;
 import shadowofthecabbage.ShadowOfTheCabbage;
@@ -25,6 +26,8 @@ public class MainMenuView extends View {
               + "\nL - Load Game"
               + "\nS - Save Game"
               + "\nH - Help Menu"
+              + "\nI - Inventory"
+              + "\nM - Map"
               + "\nC - Cylinder View"
               + "\nP - Puzzle View"
               + "\nF - Forest View"
@@ -61,6 +64,12 @@ public class MainMenuView extends View {
             case "O":
                 this.displayFirstView();
                 break;
+            case "I":
+                this.displayInventory();
+                break;
+            case "M":
+                this.displayMap();
+                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                 break;
@@ -72,8 +81,8 @@ public class MainMenuView extends View {
     private void startNewGame() {
        GameControl.createNewGame(ShadowOfTheCabbage.getPlayer()); 
        
-       GameMenuView gameMenu = new GameMenuView();
-       gameMenu.display();
+       ActionMenuView actionMenu = new ActionMenuView();
+       actionMenu.display();
     }
 
     private void loadGame() {
@@ -108,6 +117,18 @@ public class MainMenuView extends View {
     private void displayFirstView() {
         FirstView first = new FirstView();
         first.display();
+    }
+
+    private void displayInventory() {
+       Item[] items = Item.values();
+        
+        for (Item item: items){
+            System.out.println(item.getItemName() + " - " + item.getDescription());
+        }
+    }
+
+    private void displayMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      
 }
