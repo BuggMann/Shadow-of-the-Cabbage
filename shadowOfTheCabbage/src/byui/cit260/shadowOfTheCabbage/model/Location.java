@@ -17,8 +17,7 @@ public class Location implements Serializable{
     private double column;
     private boolean visited;
     
-    private RegularScene regularScene;
-
+    private RegularScene scene;
     public Location() {
         
     }
@@ -47,12 +46,12 @@ public class Location implements Serializable{
         this.visited = visited;
     }
 
-    public RegularScene getRegularScene() {
-        return regularScene;
+    public RegularScene getScene() {
+        return scene;
     }
 
-    public void setRegularScene(RegularScene regularScene) {
-        this.regularScene = regularScene;
+    public void setScene(RegularScene scene) {
+        this.scene = scene;
     }
     
     

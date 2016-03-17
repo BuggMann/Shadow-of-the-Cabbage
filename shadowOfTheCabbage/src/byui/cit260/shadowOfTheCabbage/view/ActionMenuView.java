@@ -5,7 +5,9 @@
  */
 package byui.cit260.shadowOfTheCabbage.view;
 
+import byui.cit260.shadowOfTheCabbage.model.Item;
 import byui.cit260.shadowOfTheCabbage.control.MapControl;
+import byui.cit260.shadowOfTheCabbage.model.Map;
 import java.util.Scanner;
 
 /**
@@ -88,7 +90,8 @@ public class ActionMenuView extends View{
     }
 
     private void displayMap() {
-        MapControl map = new MapControl.scenes[];
+        Map map = MapControl.createMap();
+        
     }
 
     private void look() {
@@ -120,8 +123,11 @@ public class ActionMenuView extends View{
     }
 
     private void displayInventory() {
-        System.out.println("\n*** displayInventory() function called*** ");
-    }
+        Item[] items = Item.values();
+        
+        
+        }
+    
 
     private void moveNorth() {
         System.out.println("\n*** moveNorth() function called*** ");

@@ -24,13 +24,8 @@ public class GameControl {
         
         game.setPlayer(player);
         
-        Item[] inventoryList = GameControl.createInventoryList();
-        game.setInventory(inventoryList);
-        
         Map map = MapControl.createMap();
         game.setMap(map);
-        
-        MapControl.moveActorsToStartingLocation(map);
     }
     
     
