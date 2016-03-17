@@ -88,9 +88,11 @@ public class ActionMenuView extends View{
         for (int i = 0; i < locations.length; i++) {
             System.out.println("\n------------------------------");
             for (int j = 0; j < locations[0].length; j++) {
-            System.out.print("|    |");
+                String symbol = locations[i][j].getScene().getMapSymbol();
+            System.out.print("| " + symbol + " |");
             }
         }
+        System.out.println("\n------------------------------");
         }
 
     private void look() {

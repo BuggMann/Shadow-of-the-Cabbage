@@ -44,7 +44,7 @@ public class RegularScene implements Serializable{
     }
 
     public void setMapSymbol(String symbol) {
-        this.mapSymbol = mapSymbol;
+        this.mapSymbol = symbol;
     }
 
     public boolean isBlocked() {
