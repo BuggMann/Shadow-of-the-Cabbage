@@ -6,6 +6,7 @@
 package byui.cit260.shadowOfTheCabbage.view;
 
 import byui.cit260.shadowOfTheCabbage.control.MoveControl;
+import byui.cit260.shadowOfTheCabbage.exceptions.MoveControlException;
 
 /**
  *
@@ -22,14 +23,14 @@ public class FirstView extends View {
     }
     @Override
     public boolean doAction(String value) {
+        try {
         boolean move = MoveControl.moveDirection(value);
-        
-        if (move == true) {
+        } catch (MoveControlException me) {
+              System.out.println(me.getMessage()); 
+              return false;
+        }
             System.out.println("\n*** move function called ***");
             return true;
-        } else {
-            System.out.println("\n*** invalid direction, please try again ***");
-        }
-        return false;
+        
     }
 }

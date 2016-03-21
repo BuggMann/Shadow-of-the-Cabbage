@@ -5,17 +5,18 @@
  */
 package byui.cit260.shadowOfTheCabbage.control;
 
+import byui.cit260.shadowOfTheCabbage.exceptions.MoveControlException;
+
 /**
  *
  * @author heapc_000
  */
 public class MoveControl {
 
-    public static boolean moveDirection(String value) {
+    public static boolean moveDirection(String value) throws MoveControlException {
         if (value.equalsIgnoreCase("North") || value.equalsIgnoreCase("South") || value.equalsIgnoreCase("East") || value.equalsIgnoreCase("West")) {
             return true;
-        } else {
-            return false;
-        }
+        } 
+        throw new MoveControlException("\nNot a valid direction. Try again.");
     }
 }
