@@ -6,6 +6,7 @@
 package byui.cit260.shadowOfTheCabbage.view;
 
 import byui.cit260.shadowOfTheCabbage.control.PuzzleControl;
+import byui.cit260.shadowOfTheCabbage.exceptions.PuzzleControlException;
 
 /**
  *
@@ -39,23 +40,20 @@ public class CylinderView extends View{
         //call getInput to get the distance entered
         String radius = this.getInput();
         //convert the distance to a double
+        
         double dRadius = Double.parseDouble(radius);
+        
         //call PuzzleControl.calcCylinder
+        try {
         double volume = PuzzleControl.calcCylinder(dHeight, dRadius);
+        } catch (PuzzleControlException me) {
+            System.out.println(me.getMessage());
+        }
         //if calcCylinder is not successful then display error and return
-        if (volume == -1) {
-            System.out.println("Invalid Value: Your height or radius is bigger than 37");
-            return true;
-        }
-        else if (volume < 0) {
-            System.out.println("The volume of that cylinder is: " + -volume + ", which is incorrect"
-                              +"\nTry Again");
-            return true;
-        }
-        else {
+        
             System.out.println("Good job, You opened the door!");
             PuzzleControl.openDoor();
             return true;
-        }
+        
     }
 }

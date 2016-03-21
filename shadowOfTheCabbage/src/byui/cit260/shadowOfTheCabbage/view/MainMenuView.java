@@ -120,7 +120,7 @@ public class MainMenuView extends View {
        Item[] items = Item.values();
         
         for (Item item: items){
-            System.out.println(item.getItemName() + " - " + item.getDescription());
+            System.out.println(item.getName() + " - " + item.getDescription());
         }
     }
      

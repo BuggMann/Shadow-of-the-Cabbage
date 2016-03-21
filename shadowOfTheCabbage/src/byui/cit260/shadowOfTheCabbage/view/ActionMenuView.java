@@ -10,6 +10,7 @@ import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Item;
 import byui.cit260.shadowOfTheCabbage.model.Location;
 import byui.cit260.shadowOfTheCabbage.model.Map;
+import java.util.Arrays;
 import java.util.Scanner;
 import shadowofthecabbage.ShadowOfTheCabbage;
 
@@ -119,11 +120,15 @@ public class ActionMenuView extends View {
 
     private void displayInventory() {
         Item[] items = Item.values();
-
-        for (Item item : items) {
-            System.out.println(item.getItemName() + " - " + item.getDescription());
+        
+        Arrays.sort(items);
+       
+        for (int i = 0; i < items.length; i ++) {
+             
+            System.out.println(items[i]);
         }
-    }
+    } 
+
 
     private void moveNorth() {
         System.out.println("\n*** moveNorth() function called*** ");
