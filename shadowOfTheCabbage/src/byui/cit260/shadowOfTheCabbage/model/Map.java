@@ -39,6 +39,7 @@ public class Map implements Serializable {
                 location.setColumn(column);
                 location.setRow(row);
                 
+                
                 locations[row][column] = location;
             }
         }

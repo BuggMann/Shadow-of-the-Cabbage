@@ -64,7 +64,6 @@ public class MapControl {
         fBossScene.setDescription(
         "\nThe door opens into a grove, with a small field in the middle"
         + "\nIn the center of the field stands a centaur. Kill it quick!");
-        
         fBossScene.setMapSymbol("FB");
         fBossScene.setBlocked(false);
         scenes[SceneType.fBoss.ordinal()] = fBossScene;
@@ -72,7 +71,6 @@ public class MapControl {
         BossScene cBossScene = new BossScene();
         cBossScene.setDescription(
         "\nYou are on a ledge above"
-        
               + "\n a large room. You look"
               + "\n down and see an ugly beast."
               + "\n You dont like the look of"
@@ -92,11 +90,11 @@ public class MapControl {
         wBossScene.setMapSymbol("WB");
         wBossScene.setBlocked(false);
         scenes[SceneType.wBoss.ordinal()] = wBossScene;
+        
         BossScene dBossScene = new BossScene();
         dBossScene.setDescription(
         "\nYou find a desert and decide you want to cross it."
 	+ "\nYou feel the sand rumble, and suddenly a giant sandworm pops out.");
-        
         dBossScene.setMapSymbol("DB");
         dBossScene.setBlocked(false);
         scenes[SceneType.dBoss.ordinal()] = dBossScene;
@@ -105,7 +103,6 @@ public class MapControl {
         rBossScene.setDescription(
         "\nYou exit the cave only to find you’ve wandered into a frozen tundra."
 	+ "\nYou hear a loud roar, and look to your right.A huge Wampa is running at you!");
-     
         rBossScene.setMapSymbol("RB");
         rBossScene.setBlocked(false);
         scenes[SceneType.rBoss.ordinal()] = rBossScene;
@@ -123,6 +120,7 @@ public class MapControl {
         caveScene.setMapSymbol("C ");
         caveScene.setBlocked(false);
         scenes[SceneType.cave.ordinal()] = caveScene;
+        
         RegularScene HoboJoeScene = new RegularScene();
         HoboJoeScene.setDescription(
         "\nYou find an old wise looking man sitting on a rock");

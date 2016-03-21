@@ -10,6 +10,7 @@ import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Item;
 import byui.cit260.shadowOfTheCabbage.model.Location;
 import byui.cit260.shadowOfTheCabbage.model.Map;
+import java.util.Arrays;
 import java.util.Scanner;
 import shadowofthecabbage.ShadowOfTheCabbage;
 
@@ -17,69 +18,70 @@ import shadowofthecabbage.ShadowOfTheCabbage;
  *
  * @author Scott
  */
-public class ActionMenuView extends View{
-    
+public class ActionMenuView extends View {
+
     public ActionMenuView() {
         super("\n"
-              + "\n-------------------------------------"
-              + "\n|           Action Menu              |"
-              + "\n-------------------------------------"
-              + "\nMap - Displays map (abbreviated to 'M')"
-              + "\nLook - Get a description of the current environment"
-              + "\nOpen - Opens items that are not locked"
-              + "\nTake - Take items that are availible for taking"
-              + "\nDrop - Drops item"
-              + "\nUse - Use item already in inventory"
-              + "\nAttack - Attempt attack on enemies"
-              + "\nSave - Save game at current location"
-              + "\nInventory - display inventory"
-              + "\nNorth - Moves North"
-              + "\nEast - Moves East"
-              + "\nSouth - Moves South"
-              + "\nWest - Moves North"
-              + "\nQ - Go Back (Help Menu)");
+                + "\n-------------------------------------"
+                + "\n|           Action Menu              |"
+                + "\n-------------------------------------"
+                + "\nMap - Displays map (abbreviated to 'M')"
+                + "\nLook - Get a description of the current environment"
+                + "\nOpen - Opens items that are not locked"
+                + "\nTake - Take items that are availible for taking"
+                + "\nDrop - Drops item"
+                + "\nUse - Use item already in inventory"
+                + "\nAttack - Attempt attack on enemies"
+                + "\nSave - Save game at current location"
+                + "\nInventory - display inventory"
+                + "\nNorth - Moves North"
+                + "\nEast - Moves East"
+                + "\nSouth - Moves South"
+                + "\nWest - Moves North"
+                + "\nQ - Go Back (Help Menu)");
     }
+
     @Override
     public boolean doAction(String value) {
-        
+
         value = value.toUpperCase();
-        
+
         switch (value) {
-            case "M": 
+            case "M":
                 this.displayMap();
                 break;
-            case "LOOK": 
+            case "LOOK":
                 this.look();
                 break;
-            case "OPEN": 
+            case "OPEN":
                 this.open();
                 break;
-            case "USE": 
+            case "USE":
                 this.use();
                 break;
-            case "SAVE": 
+            case "SAVE":
                 this.save();
                 break;
-            case "I": 
+            case "I":
                 this.displayInventory();
                 break;
-            case "NORTH": 
+            case "NORTH":
                 this.moveNorth();
                 break;
-            case "EAST": 
+            case "EAST":
                 this.moveEast();
                 break;
-            case "SOUTH": 
+            case "SOUTH":
                 this.moveSouth();
                 break;
-            case "WEST": 
+            case "WEST":
                 this.moveWest();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                 break;
         }
-        
+
         return false;
     }
 
@@ -89,22 +91,21 @@ public class ActionMenuView extends View{
         for (int i = 0; i < locations.length; i++) {
             System.out.println("\n--------------------------");
             for (int j = 0; j < locations[0].length; j++) {
-                if  (locations[i][j].isVisited() == true) {
-                    symbol = locations[i][j].getScene().getMapSymbol();
+                if (locations[i][j].isVisited()) {
+                    symbol = locations[i][j].getScene().getMapSymbol();  
                 }
-                else {symbol = "??";}
-                
-            System.out.print("| " + symbol + " ");
+                else symbol = "??";
+                System.out.print("| " + symbol + " ");
             }
             System.out.print("|");
         }
         System.out.println("\n--------------------------");
-        }
+    }
 
     private void look() {
         System.out.println("\n*** look() function called*** ");
     }
-    
+
     private void open() {
         System.out.println("\n*** open() function called*** ");
     }
@@ -120,10 +121,14 @@ public class ActionMenuView extends View{
     private void displayInventory() {
         Item[] items = Item.values();
         
-        for (Item item: items){
-            System.out.println(item.getItemName() + " - " + item.getDescription());
+        Arrays.sort(items);
+       
+        for (int i = 0; i < items.length; i ++) {
+             
+            System.out.println(items[i]);
         }
-    }
+    } 
+
 
     private void moveNorth() {
         System.out.println("\n*** moveNorth() function called*** ");
@@ -140,5 +145,5 @@ public class ActionMenuView extends View{
     private void moveWest() {
         System.out.println("\n*** moveWest() function called*** ");
     }
-      
+
 }

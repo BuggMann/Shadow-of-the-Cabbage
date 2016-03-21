@@ -67,9 +67,6 @@ public class MainMenuView extends View {
             case "I":
                 this.displayInventory();
                 break;
-            case "M":
-                this.displayMap();
-                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                 break;
@@ -123,12 +120,8 @@ public class MainMenuView extends View {
        Item[] items = Item.values();
         
         for (Item item: items){
-            System.out.println(item.getItemName() + " - " + item.getDescription());
+            System.out.println(item.getName() + " - " + item.getDescription());
         }
-    }
-
-    private void displayMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      
 }
