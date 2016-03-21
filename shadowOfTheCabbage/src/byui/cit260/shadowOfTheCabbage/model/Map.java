@@ -38,7 +38,6 @@ public class Map implements Serializable {
                 Location location = new Location();
                 location.setColumn(column);
                 location.setRow(row);
-                location.setVisited(false);
                 
                 locations[row][column] = location;
             }

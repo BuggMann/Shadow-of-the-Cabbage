@@ -19,7 +19,7 @@ public class Location implements Serializable{
     
     private RegularScene scene;
     public Location() {
-        
+        this.visited = false;
     }
 
     public double getRow() {
