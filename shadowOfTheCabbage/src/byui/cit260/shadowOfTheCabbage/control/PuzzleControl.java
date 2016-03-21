@@ -42,13 +42,13 @@ public class PuzzleControl {
 	if (height < 1 || height > 75) {
 	
             throw new PuzzleControlException("\ncannot enter a negative number"
-                                            + "or a number larger than 75");
+                                            + " or a number larger than 75");
         }
         
         if (distance < 1 || distance > 75) {
 		
             throw new PuzzleControlException("\ncannot enter a negative number"
-                                            + "or a number larger than 75");
+                                            + " or a number larger than 75");
         }   
 	
         double angle = Math.round((Math.sqrt(Math.pow(height,2)+ Math.pow(distance,2))) * 100.00) / 100.00;

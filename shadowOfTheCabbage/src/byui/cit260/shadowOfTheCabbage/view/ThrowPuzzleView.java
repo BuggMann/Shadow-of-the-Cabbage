@@ -13,53 +13,60 @@ import java.util.Scanner;
  *
  * @author heapc_000
  */
-public class ThrowPuzzleView extends View{
+public class ThrowPuzzleView extends View {
 
     public ThrowPuzzleView() {
         super("\n"
-              + "\n-------------------------------------"
-              + "\n|            Boss Battle            |"
-              + "\n-------------------------------------"
-              + "\n You are on a ledge above"
-              + "\n a large room. You look"
-              + "\n down and see an ugly beast."
-              + "\n You dont like the look of"
-              + "\n him and decide to throw a rock"
-              + "\n"
-              + "\n Judge the cliff height"
-              + "\n and distance to target"
-              + "\n to get the perfect throw." 
-              + "\n"
-              + "\nB - Back"
-              + "\n"
-              + "\n  Please enter the cliff Height");
+                + "\n-------------------------------------"
+                + "\n|            Boss Battle            |"
+                + "\n-------------------------------------"
+                + "\n You are on a ledge above"
+                + "\n a large room. You look"
+                + "\n down and see an ugly beast."
+                + "\n You dont like the look of"
+                + "\n him and decide to throw a rock"
+                + "\n"
+                + "\n Judge the cliff height"
+                + "\n and distance to target"
+                + "\n to get the perfect throw."
+                + "\n"
+                + "\nB - Back"
+                + "\n"
+                + "\n  Please enter the cliff Height");
     }
+
     @Override
-    public boolean doAction(String height) { 
+    public boolean doAction(String height) {
         //convert height to double
-      
-        double dHeight = Double.parseDouble(height);
-        
+        double dHeight = 0;
+        try {
+            dHeight = Double.parseDouble(height);
+        } catch (NumberFormatException nf) {
+            System.out.println("\n You must enter a valid number. Try again.");
+            return false;
+        }
         //set promptMessage equal to "enter the distance"
         this.displayMessage = "enter distance";
         //call getInput to get the distance entered
         String distance = this.getInput();
         //convert distance to a double
-        
-        double dDistance = Double.parseDouble(distance);
-        
+        double dDistance = 0;
+        try {
+            dDistance = Double.parseDouble(distance);
+        } catch (NumberFormatException nf) {
+            System.out.println("\n You must enter a valid number. Try again.");
+            return false;
+        }
         //call control function to perform task
         try {
-        double angle = PuzzleControl.calcAngle(dHeight, dDistance);
+            double angle = PuzzleControl.calcAngle(dHeight, dDistance);
         } catch (PuzzleControlException me) {
             System.out.println(me.getMessage());
+            return false;
         }
-            System.out.println("Your throw was straight! The beast is dead!");
-            return true;
-        
-         
+        System.out.println("Your throw was straight! The beast is dead!");
+        return true;
+
     }
 
-   
 }
-
