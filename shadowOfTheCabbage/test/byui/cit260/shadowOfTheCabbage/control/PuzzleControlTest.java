@@ -5,6 +5,7 @@
  */
 package byui.cit260.shadowOfTheCabbage.control;
 
+import byui.cit260.shadowOfTheCabbage.exceptions.PuzzleControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class PuzzleControlTest {
      * Test of calcCylinder method, of class PuzzleControl.
      */
     @Test
-    public void testCalcCylinder() {
+    public void testCalcCylinder() throws PuzzleControlException{
         System.out.println("calcCylinder");
         System.out.println ("test case 1");
         double height = 23.0;
@@ -77,7 +78,7 @@ public class PuzzleControlTest {
      * Test of calcAngle method, of class PuzzleControl.
      */
     @Test
-    public void testCalcAngle() {
+    public void testCalcAngle() throws PuzzleControlException{
         System.out.println("calcAngle");
         System.out.println("test case 1");
         double height = 40.0;

@@ -34,20 +34,29 @@ public class CylinderView extends View{
     public boolean doAction(String height) {
         
         //convert height to double
-        double dHeight = Double.parseDouble(height);
+        double dHeight = 0;
+        try {
+        dHeight = Double.parseDouble(height);
+        } catch (NumberFormatException nf) {
+            System.out.println("\n You must enter a valid number. Try again.");
+        }
         //set promptMessage = "Enter Distance"
         this.displayMessage = "input radius";
         //call getInput to get the distance entered
         String radius = this.getInput();
         //convert the distance to a double
-        
-        double dRadius = Double.parseDouble(radius);
-        
+        double dRadius = 0;
+        try {
+        dRadius = Double.parseDouble(radius);
+        } catch (NumberFormatException nf) {
+            System.out.println("\n You must enter a valid number. Try again.");
+        }
         //call PuzzleControl.calcCylinder
         try {
         double volume = PuzzleControl.calcCylinder(dHeight, dRadius);
         } catch (PuzzleControlException me) {
             System.out.println(me.getMessage());
+            return false;
         }
         //if calcCylinder is not successful then display error and return
         
