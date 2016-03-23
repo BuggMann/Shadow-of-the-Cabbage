@@ -5,6 +5,7 @@
  */
 package byui.cit260.shadowOfTheCabbage.view;
 
+import byui.cit260.shadowOfTheCabbage.control.ItemSortControl;
 import byui.cit260.shadowOfTheCabbage.control.MapControl;
 import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Item;
@@ -120,13 +121,12 @@ public class ActionMenuView extends View {
 
     private void displayInventory() {
         Item[] items = Item.values();
-        
-        Arrays.sort(items);
-       
-        for (int i = 0; i < items.length; i ++) {
-             
-            System.out.println(items[i]);
+        items = ItemSortControl.doSelectionSort(items);
+        for (Item item : items) {
+            System.out.println(item.getName() + " - " + item.getItemType() + ", Description:" + item.getDescription());
         }
+            
+        
     } 
 
 
