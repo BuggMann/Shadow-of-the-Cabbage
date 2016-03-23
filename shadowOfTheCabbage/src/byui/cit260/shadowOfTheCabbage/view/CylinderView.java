@@ -52,7 +52,6 @@ public class CylinderView extends View{
         //if calcCylinder is not successful then display error and return
         
             System.out.println("Good job, You opened the door!");
-            PuzzleControl.openDoor();
             return true;
         
     }
