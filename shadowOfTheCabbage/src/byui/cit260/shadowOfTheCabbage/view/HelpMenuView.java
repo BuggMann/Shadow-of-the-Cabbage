@@ -6,6 +6,7 @@
 package byui.cit260.shadowOfTheCabbage.view;
 
 import byui.cit260.shadowOfTheCabbage.control.GameControl;
+import byui.cit260.shadowOfTheCabbage.control.MaxStrengthControl;
 import byui.cit260.shadowOfTheCabbage.model.Monster;
 import java.util.Scanner;
 import shadowofthecabbage.ShadowOfTheCabbage;
@@ -83,15 +84,8 @@ public class HelpMenuView extends View {
     }
 
     private void displayStrength() {
-        Monster[] monsters = Monster.values();
-        int maxStr = monsters[0].getStr();
-        for (Monster monster : monsters) {
-            int str = monster.getStr();
-            if (str > maxStr) {
-                maxStr = str;
-            }
-        }
+        MaxStrengthControl maxStrength = new MaxStrengthControl();
+        int maxStr = maxStrength.calcMaxStrength();
         System.out.println(maxStr);
     }
-
 }
