@@ -18,7 +18,7 @@ public enum Item implements Serializable {
     Spear("spear", "The Point", "A spear, thats the point!"),
     Mace("mace", "Windu", "Created in a galaxy far far away. Not sure how it got into your inventory"),
     Bommerang("boomerang", "Glorp", "One boomerang to rule them all. Forged in the firey depths of Mount Boom"),
-    Cabbage("food", "Cabbage", "A leafy green");
+    Cabbage("food", "A Cabbage", "A leafy green");
     
     private String itemType;
     private String name;

@@ -18,9 +18,10 @@ public class ItemSortControl {
         {
             int index = i;
             for (int j = i + 1; j < arr.length; j++){
-                String firstName = arr[i].getName();
-                String secondName = arr[j].getName();
-                if (firstName.compareTo(secondName) < 0)
+                String firstName = arr[j].getName();
+                String secondName = arr[index].getName();
+                int result = firstName.compareTo(secondName);
+                if (result < 0)
                     index = j;
             }
             Item smallerNumber = arr[index]; 
