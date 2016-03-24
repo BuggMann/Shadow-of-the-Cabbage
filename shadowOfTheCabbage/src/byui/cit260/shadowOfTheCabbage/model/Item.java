@@ -18,17 +18,17 @@ public enum Item implements Serializable {
     Spear("spear", "The Point", "A spear, thats the point!"),
     Mace("mace", "Windu", "Created in a galaxy far far away. Not sure how it got into your inventory"),
     Bommerang("boomerang", "Glorp", "One boomerang to rule them all. Forged in the firey depths of Mount Boom"),
-    Cabbage("food", "The Cabbage", "A leafy green");
+    Cabbage("food", "Cabbage", "A leafy green");
     
     private String itemType;
-    private String Name;
+    private String name;
     private String description;
     
     private Game game;
 
     Item(String itemType, String itemName, String description) {
         this.itemType = itemType;
-        this.Name = itemName;
+        this.name = itemName;
         this.description = description;
     }
     
@@ -37,7 +37,7 @@ public enum Item implements Serializable {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public String getDescription() {
@@ -50,7 +50,7 @@ public enum Item implements Serializable {
 
     @Override
     public String toString() {
-        return  Name + " - " + itemType + ", description: " + description;
+        return  name + " - " + itemType + ", description: " + description;
     }
     
     
