@@ -26,10 +26,10 @@ public class FirstView extends View {
         try {
         boolean move = MoveControl.moveDirection(value);
         } catch (MoveControlException me) {
-              System.out.println(me.getMessage()); 
+              ErrorView.display(this.getClass().getName(),me.getMessage()); 
               return false;
         }
-            System.out.println("\n*** move function called ***");
+            this.console.println("\n*** move function called ***");
             return true;
         
     }

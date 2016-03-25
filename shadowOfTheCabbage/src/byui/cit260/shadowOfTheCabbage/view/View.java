@@ -5,7 +5,10 @@
  */
 package byui.cit260.shadowOfTheCabbage.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import shadowofthecabbage.ShadowOfTheCabbage;
 
 /**
  *
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = ShadowOfTheCabbage.getInfile();
+    protected final PrintWriter console = ShadowOfTheCabbage.getOutfile();
 
     public View() {
     }
@@ -40,22 +46,25 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+        
         String value = null; // value to be returned
         boolean valid = false; // initialize to not value
-
+        try {
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
 
-            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = this.keyboard.readLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trail blanks
 
             if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                 continue;
             }
 
             break; // end the loop
+        }
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
         }
         return value;
     }

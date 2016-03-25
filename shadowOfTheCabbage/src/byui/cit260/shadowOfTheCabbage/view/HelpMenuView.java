@@ -52,7 +52,7 @@ public class HelpMenuView extends View {
                 this.displayStrength();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
                 break;
         }
 
@@ -65,7 +65,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayCabbage() {
-        System.out.println("        .-~~~~-.\n"
+        this.console.println("        .-~~~~-.\n"
                 + "       /  ( ( ' \\\n"
                 + "      | ( )   )  |\n"
                 + "      \\ ) ' }  / /\n"
@@ -75,7 +75,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayInventory() {
-        System.out.println("*** displayInventory function Called ***");
+        this.console.println("*** displayInventory function Called ***");
     }
 
     private void displayTrophyMenu() {
@@ -86,6 +86,6 @@ public class HelpMenuView extends View {
     private void displayStrength() {
         MaxStrengthControl maxStrength = new MaxStrengthControl();
         int maxStr = maxStrength.calcMaxStrength();
-        System.out.println(maxStr);
+        this.console.println(maxStr);
     }
 }

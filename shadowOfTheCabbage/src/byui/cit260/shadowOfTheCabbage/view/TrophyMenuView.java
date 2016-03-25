@@ -47,7 +47,7 @@ public class TrophyMenuView extends View{
                 this.displayFifthTrophy();
                 break;    
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
                 break;
         }
         
@@ -55,7 +55,7 @@ public class TrophyMenuView extends View{
     }
 
     private void displayFirstTrophy() {
-        System.out.println("|@@@@|     |####|\n" +
+        this.console.println("|@@@@|     |####|\n" +
 "|@@@@|     |####|\n" +
 "|@@@@|     |####|\n" +
 "\\@@@@|     |####/\n" +
@@ -73,7 +73,7 @@ public class TrophyMenuView extends View{
     }
 
     private void displaySecondTrophy() {
-        System.out.println("  {}\n" +
+        this.console.println("  {}\n" +
 "                 /__\\\n" +
 "               /|    |\\\n" +
 "              (_|    |_)\n" +
@@ -84,7 +84,7 @@ public class TrophyMenuView extends View{
     }
 
     private void displayThirdTrophy() {
-        System.out.println("              .-=========-.\n" +
+        this.console.println("              .-=========-.\n" +
 "              \\'-=======-'/\n" +
 "              _|   .=.   |_\n" +
 "             ((|  {{3}}  |))\n" +
@@ -96,7 +96,7 @@ public class TrophyMenuView extends View{
     }
 
     private void displayFourthTrophy() {
-        System.out.println("              ___________\n" +
+        this.console.println("              ___________\n" +
 "            '._==_==_=_.'\n" +
 "            .-\\:      /-.\n" +
 "           | (|:.     |) |\n" +
@@ -108,7 +108,7 @@ public class TrophyMenuView extends View{
     }
 
     private void displayFifthTrophy() {
-        System.out.println("  i.\n" +
+        this.console.println("  i.\n" +
 "                            .7.\n" +
 "                           .. :v\n" +
 "                          c:  .X\n" +

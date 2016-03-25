@@ -38,7 +38,7 @@ public class CylinderView extends View{
         try {
         dHeight = Double.parseDouble(height);
         } catch (NumberFormatException nf) {
-            System.out.println("\n You must enter a valid number. Try again.");
+            ErrorView.display(this.getClass().getName(),"\n You must enter a valid number. Try again.");
         }
         //set promptMessage = "Enter Distance"
         this.displayMessage = "input radius";
@@ -49,18 +49,18 @@ public class CylinderView extends View{
         try {
         dRadius = Double.parseDouble(radius);
         } catch (NumberFormatException nf) {
-            System.out.println("\n You must enter a valid number. Try again.");
+            ErrorView.display(this.getClass().getName(),"\n You must enter a valid number. Try again.");
         }
         //call PuzzleControl.calcCylinder
         try {
         double volume = PuzzleControl.calcCylinder(dHeight, dRadius);
         } catch (PuzzleControlException me) {
-            System.out.println(me.getMessage());
+            ErrorView.display(this.getClass().getName(),me.getMessage());
             return false;
         }
         //if calcCylinder is not successful then display error and return
         
-            System.out.println("Good job, You opened the door!");
+            this.console.println("Good job, You opened the door!");
             return true;
         
     }

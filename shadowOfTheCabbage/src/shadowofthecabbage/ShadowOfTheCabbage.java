@@ -9,7 +9,14 @@ package shadowofthecabbage;
 
 import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Player;
+import byui.cit260.shadowOfTheCabbage.view.ErrorView;
 import byui.cit260.shadowOfTheCabbage.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,16 +26,44 @@ public class ShadowOfTheCabbage {
 
     private static Game currentGame;
     private static Player player = null;
+    private static PrintWriter outfile = null;
+    private static BufferedReader infile = null;
+    private static PrintWriter logfile = null;
     
     public static void main(String[] args) {
+        try {
+        ShadowOfTheCabbage.infile =
+                new BufferedReader(new InputStreamReader(System.in));
+        
+        ShadowOfTheCabbage.outfile = new PrintWriter(System.out, true);
+        
+        String filePath = "log.text";
+        ShadowOfTheCabbage.logfile = new PrintWriter(filePath);
        
         StartProgramView startProgramView = new StartProgramView();
-        try {
         startProgramView.display();
+        return;
+        
         } catch (Throwable te) {
-            System.out.println(te.getMessage());
+            ErrorView.display("ShadowOfTheCabbage", "te.getMessage()");
             te.printStackTrace();
-            startProgramView.display();
+        }
+        
+        finally {
+            try {
+                if (ShadowOfTheCabbage.infile != null);
+                    ShadowOfTheCabbage.infile.close();
+                    
+                if (ShadowOfTheCabbage.outfile != null);
+                    ShadowOfTheCabbage.outfile.close();
+                    
+                if (ShadowOfTheCabbage.logfile != null);
+                    ShadowOfTheCabbage.logfile.close();
+            } catch (IOException ex) {
+                ErrorView.display("ShadowOfTheCabbage", "Error closing files");
+                return;
+            }
+            
         }
     }
 
@@ -47,6 +82,30 @@ public class ShadowOfTheCabbage {
 
     public static void setPlayer(Player player) {
         ShadowOfTheCabbage.player = player;
+    }
+
+    public static PrintWriter getOutfile() {
+        return outfile;
+    }
+
+    public static void setOutfile(PrintWriter outfile) {
+        ShadowOfTheCabbage.outfile = outfile;
+    }
+
+    public static BufferedReader getInfile() {
+        return infile;
+    }
+
+    public static void setInfile(BufferedReader infile) {
+        ShadowOfTheCabbage.infile = infile;
+    }
+
+    public static PrintWriter getLogfile() {
+        return logfile;
+    }
+
+    public static void setLogfile(PrintWriter logfile) {
+        ShadowOfTheCabbage.logfile = logfile;
     }
     
     

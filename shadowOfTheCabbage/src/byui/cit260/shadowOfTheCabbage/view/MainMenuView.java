@@ -68,7 +68,7 @@ public class MainMenuView extends View {
                 this.displayInventory();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
                 break;
         }
         
@@ -83,11 +83,28 @@ public class MainMenuView extends View {
     }
 
     private void loadGame() {
-        System.out.println("*** loadGame function Called ***");
+        this.console.println("\nSelect the game to be loaded");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        ActionMenuView actionMenu = new ActionMenuView();
+        actionMenu.display();
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function Called ***");
+        this.console.println("\nSelect the file where you want to save your game");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(ShadowOfTheCabbage.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayHelpMenuView() {
@@ -120,7 +137,7 @@ public class MainMenuView extends View {
        Item[] items = Item.values();
         
         for (Item item: items){
-            System.out.println(item.getName() + " - " + item.getDescription());
+            this.console.println(item.getName() + " - " + item.getDescription());
         }
     }
      

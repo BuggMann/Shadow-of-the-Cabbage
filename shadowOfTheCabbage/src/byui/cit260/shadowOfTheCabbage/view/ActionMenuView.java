@@ -76,7 +76,7 @@ public class ActionMenuView extends View {
                 this.moveWest();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
                 break;
         }
 
@@ -87,40 +87,40 @@ public class ActionMenuView extends View {
         Location[][] locations = ShadowOfTheCabbage.getCurrentGame().getMap().getLocations();
         String symbol;
         for (int i = 0; i < locations.length; i++) {
-            System.out.println("\n--------------------------");
+            this.console.println("\n--------------------------");
             for (int j = 0; j < locations[0].length; j++) {
                 if (locations[i][j].isVisited()) {
                     symbol = locations[i][j].getScene().getMapSymbol();  
                 }
                 else symbol = "??";
-                System.out.print("| " + symbol + " ");
+                this.console.print("| " + symbol + " ");
             }
-            System.out.print("|");
+            this.console.print("|");
         }
-        System.out.println("\n--------------------------");
+        this.console.println("\n--------------------------");
     }
 
     private void look() {
-        System.out.println("\n*** look() function called*** ");
+        this.console.println("\n*** look() function called*** ");
     }
 
     private void open() {
-        System.out.println("\n*** open() function called*** ");
+        this.console.println("\n*** open() function called*** ");
     }
 
     private void use() {
-        System.out.println("\n*** use() function called*** ");
+        this.console.println("\n*** use() function called*** ");
     }
 
     private void save() {
-        System.out.println("\n*** save() function called*** ");
+        this.console.println("\n*** save() function called*** ");
     }
 
     private void displayInventory() {
         Item[] items = Item.values();
         items = ItemSortControl.doSelectionSort(items);
         for (Item item : items) {
-            System.out.println(item.getName() + " - " + item.getItemType() + ", Description:" + item.getDescription());
+            this.console.println(item.getName() + " - " + item.getItemType() + ", Description:" + item.getDescription());
         }
             
         
@@ -128,19 +128,19 @@ public class ActionMenuView extends View {
 
 
     private void moveNorth() {
-        System.out.println("\n*** moveNorth() function called*** ");
+        this.console.println("\n*** moveNorth() function called*** ");
     }
 
     private void moveEast() {
-        System.out.println("\n*** moveEast() function called*** ");
+        this.console.println("\n*** moveEast() function called*** ");
     }
 
     private void moveSouth() {
-        System.out.println("\n*** moveSouth() function called*** ");
+        this.console.println("\n*** moveSouth() function called*** ");
     }
 
     private void moveWest() {
-        System.out.println("\n*** moveWest() function called*** ");
+        this.console.println("\n*** moveWest() function called*** ");
     }
 
 }
