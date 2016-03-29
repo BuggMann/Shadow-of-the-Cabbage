@@ -27,7 +27,7 @@ public class HelpMenuView extends View {
                 + "\nI - Displays Inventory"
                 + "\nT - Displays Trophy Menu"
                 + "\nS - Displays Strength of Strongest Monster"
-                + "\nB - Back (Main Menu)");
+                + "\nQ - Back (Main Menu)");
     }
 
     @Override
