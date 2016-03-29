@@ -81,7 +81,7 @@ public class ActionMenuView extends View {
                 this.moveWest();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection *** Try Again");
                 break;
         }
 
@@ -95,9 +95,10 @@ public class ActionMenuView extends View {
             this.console.println("\n--------------------------");
             for (int j = 0; j < locations[0].length; j++) {
                 if (locations[i][j].isVisited()) {
-                    symbol = locations[i][j].getScene().getMapSymbol();  
+                    symbol = locations[i][j].getScene().getMapSymbol();
+                } else {
+                    symbol = "??";
                 }
-                else symbol = "??";
                 this.console.print("| " + symbol + " ");
             }
             this.console.print("|");
@@ -124,22 +125,18 @@ public class ActionMenuView extends View {
     public static void displayInventory(PrintWriter outFile) {
         Item[] items = Item.values();
         items = ItemSortControl.doSelectionSort(items);
-        
+
         outFile.println("\n\n             Inventory List             ");
         outFile.printf("%n%-15s%-20s%-50s", "Name", "Item Type", "Description");
         outFile.printf("%n%-15s%-20s%-50s", "----", "---------", "-----------");
-        
-        for (Item item : items) {
-            outFile.printf("%n%-15s%-20s%-50s", item.getName()
-                                            , item.getItemType()
-                                            , item.getDescription());
-             
-            
-        }
-            outFile.flush();
-        
-    } 
 
+        for (Item item : items) {
+            outFile.printf("%n%-15s%-20s%-50s", item.getName(), item.getItemType(), item.getDescription());
+
+        }
+        outFile.flush();
+
+    }
 
     private void moveNorth() {
         this.console.println("\n*** moveNorth() function called*** ");

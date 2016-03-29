@@ -9,7 +9,7 @@ package byui.cit260.shadowOfTheCabbage.exceptions;
  *
  * @author heapc_000
  */
-public class MoveControlException extends Exception{
+public class MoveControlException extends Exception {
 
     public MoveControlException() {
     }
@@ -29,5 +29,5 @@ public class MoveControlException extends Exception{
     public MoveControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
         super(string, thrwbl, bln, bln1);
     }
-    
+
 }

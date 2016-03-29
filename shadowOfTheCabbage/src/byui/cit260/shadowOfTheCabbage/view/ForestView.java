@@ -24,14 +24,14 @@ public class ForestView extends View {
     @Override
     public boolean doAction(String value) {
         try {
-        boolean move = MoveControl.moveDirection(value);
+            boolean move = MoveControl.moveDirection(value);
         } catch (MoveControlException me) {
-            ErrorView.display(this.getClass().getName(),me.getMessage());
+            ErrorView.display(this.getClass().getName(), me.getMessage());
             return false;
         }
-            this.console.println("\n*** move function called ***");
-            return true;
-        
+        this.console.println("\n*** move function called ***");
+        return true;
+
     }
 
 }

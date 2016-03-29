@@ -11,14 +11,14 @@ import java.io.Serializable;
  *
  * @author Scott
  */
-public class Location implements Serializable{
-    
+public class Location implements Serializable {
+
     private double row;
     private double column;
     private boolean visited;
-    
+
     private RegularScene scene;
-   
+
     public Location() {
         this.visited = false;
     }
@@ -54,8 +54,6 @@ public class Location implements Serializable{
     public void setScene(RegularScene scene) {
         this.scene = scene;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -94,7 +92,5 @@ public class Location implements Serializable{
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
     }
-    
-    
-    
+
 }

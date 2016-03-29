@@ -29,6 +29,5 @@ public class ItemSortControlException extends Exception {
     public ItemSortControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
         super(string, thrwbl, bln, bln1);
     }
-    
-    
+
 }

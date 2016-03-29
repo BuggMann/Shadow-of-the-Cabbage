@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author Scott
  */
-public class PuzzleScene extends RegularScene{
-    
+public class PuzzleScene extends RegularScene {
+
     private boolean door;
     private String puzzle;
 
@@ -21,8 +21,6 @@ public class PuzzleScene extends RegularScene{
         super();
     }
 
-    
-    
     public boolean isDoor() {
         return door;
     }
@@ -72,7 +70,5 @@ public class PuzzleScene extends RegularScene{
     public String toString() {
         return "PuzzleScene{" + "door=" + door + ", puzzle=" + puzzle + '}';
     }
-    
-    
-    
+
 }

@@ -16,23 +16,23 @@ import shadowofthecabbage.ShadowOfTheCabbage;
 public class InventoryListView extends View {
 
     public InventoryListView() {
-                super("\n"
-                    + "Select the file where you want to save your inventory list");
+        super("\n"
+                + "Select the file where you want to save your inventory list");
     }
 
     @Override
     public boolean doAction(String outputLocation) {
-            //call function in ActionMenuView
-            try { PrintWriter outFile = new PrintWriter(outputLocation);
-                ActionMenuView.displayInventory(outFile);
-            } catch (IOException ex) {
-                ErrorView.display(this.getClass().getName(),ex.getMessage());
-                return false;
-            }
-       //print that file was printed succesfully
-       this.console.println("Inventory List printed");
-       return true;
+        //call function in ActionMenuView
+        try {
+            PrintWriter outFile = new PrintWriter(outputLocation);
+            ActionMenuView.displayInventory(outFile);
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+            return false;
+        }
+        //print that file was printed succesfully
+        this.console.println("Inventory List printed");
+        return true;
     }
-    
-    
+
 }

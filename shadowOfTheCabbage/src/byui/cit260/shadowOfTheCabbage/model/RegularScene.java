@@ -12,17 +12,16 @@ import java.util.Objects;
  *
  * @author Scott
  */
-public class RegularScene implements Serializable{
-    
+public class RegularScene implements Serializable {
+
     private String description;
     private String hint;
     private String mapSymbol;
     private boolean blocked;
-     
-            
+
     public RegularScene() {
     }
-    
+
     public String getDescription() {
         return description;
     }
@@ -54,8 +53,6 @@ public class RegularScene implements Serializable{
     public void setBlocked(boolean blocked) {
         this.blocked = blocked;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -94,7 +91,5 @@ public class RegularScene implements Serializable{
     public String toString() {
         return "RegularScene{" + "description=" + description + ", hint=" + hint + ", symbol=" + mapSymbol + '}';
     }
-    
-    
-    
+
 }

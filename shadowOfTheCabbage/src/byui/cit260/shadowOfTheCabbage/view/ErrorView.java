@@ -13,15 +13,17 @@ import shadowofthecabbage.ShadowOfTheCabbage;
  * @author heapc_000
  */
 public class ErrorView {
+
     private static final PrintWriter errorFile = ShadowOfTheCabbage.getOutfile();
     private static final PrintWriter logFile = ShadowOfTheCabbage.getLogfile();
+
     public static void display(String className, String errorMessage) {
         errorFile.println(
-                        "---------------------------------------------"
-                      + "\n- ERROR -" + errorMessage
-                      + "\n--------------------------------------------");
-        
-            logFile.println(className + " - " + errorMessage);
+                "---------------------------------------------"
+                + "\n- ERROR -" + errorMessage
+                + "\n--------------------------------------------");
+
+        logFile.println(className + " - " + errorMessage);
     }
-    
+
 }

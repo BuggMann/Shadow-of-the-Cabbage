@@ -15,9 +15,7 @@ public class MaxStrengthControl {
 
     public MaxStrengthControl() {
     }
-    
-    
- 
+
     public int calcMaxStrength() {
         Monster[] monsters = Monster.values();
         int maxStr = monsters[0].getStr();
@@ -25,10 +23,10 @@ public class MaxStrengthControl {
             int str = monster.getStr();
             if (str > maxStr) {
                 maxStr = str;
-        
-    }
-            
-} 
+
+            }
+
+        }
         return maxStr;
     }
 }

@@ -16,7 +16,7 @@ public class MoveControl {
     public static boolean moveDirection(String value) throws MoveControlException {
         if (value.equalsIgnoreCase("North") || value.equalsIgnoreCase("South") || value.equalsIgnoreCase("East") || value.equalsIgnoreCase("West")) {
             return true;
-        } 
+        }
         throw new MoveControlException("\nNot a valid direction. Try again.");
     }
 }

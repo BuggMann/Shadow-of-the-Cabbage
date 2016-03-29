@@ -9,11 +9,12 @@ package byui.cit260.shadowOfTheCabbage.view;
  *
  * @author heapc_000
  */
+public interface ViewInterface {
 
-    public interface ViewInterface {
-        public void display();
-        public String getInput();
-        public boolean doAction(String value);
-                
-    }
+    public void display();
 
+    public String getInput();
+
+    public boolean doAction(String value);
+
+}

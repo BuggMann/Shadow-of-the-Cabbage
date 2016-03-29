@@ -52,7 +52,7 @@ public class HelpMenuView extends View {
                 this.displayStrength();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection *** Try Again");
                 break;
         }
 
