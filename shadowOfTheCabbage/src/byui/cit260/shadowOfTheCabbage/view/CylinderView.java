@@ -12,33 +12,34 @@ import byui.cit260.shadowOfTheCabbage.exceptions.PuzzleControlException;
  *
  * @author Scott
  */
-public class CylinderView extends View{
-   
+public class CylinderView extends View {
+
     public CylinderView() {
         super("\n"
-              + "\nYou see an incredibly large door"
-              + "\ncovered in giant skulls and other"
-              + "\nbones (which is super creepy). There"
-              + "\nis an inscription on the door which"
-              + "\nreads 'Only with the correct amount"
-              + "\nof water will this door open'"
-              + "\nThe cryptic message wants you to"
-              + "\ncalculate the right cylinder size to"
-              + "\npour into the door's slot"
-              + "\n"
-              + "\nInput the height of your cylinder"
-              + "\n"
-              +"\nB - Back");
+                + "\nYou see an incredibly large door"
+                + "\ncovered in giant skulls and other"
+                + "\nbones (which is super creepy). There"
+                + "\nis an inscription on the door which"
+                + "\nreads 'Only with the correct amount"
+                + "\nof water will this door open'"
+                + "\nThe cryptic message wants you to"
+                + "\ncalculate the right cylinder size to"
+                + "\npour into the door's slot"
+                + "\n"
+                + "\nInput the height of your cylinder"
+                + "\n"
+                + "\nB - Back");
     }
+
     @Override
     public boolean doAction(String height) {
-        
+
         //convert height to double
         double dHeight = 0;
         try {
-        dHeight = Double.parseDouble(height);
+            dHeight = Double.parseDouble(height);
         } catch (NumberFormatException nf) {
-            ErrorView.display(this.getClass().getName(),"\n You must enter a valid number. Try again.");
+            ErrorView.display(this.getClass().getName(), "\n You must enter a valid number. Try again.");
         }
         //set promptMessage = "Enter Distance"
         this.displayMessage = "input radius";
@@ -47,21 +48,21 @@ public class CylinderView extends View{
         //convert the distance to a double
         double dRadius = 0;
         try {
-        dRadius = Double.parseDouble(radius);
+            dRadius = Double.parseDouble(radius);
         } catch (NumberFormatException nf) {
-            ErrorView.display(this.getClass().getName(),"\n You must enter a valid number. Try again.");
+            ErrorView.display(this.getClass().getName(), "\n You must enter a valid number. Try again.");
         }
         //call PuzzleControl.calcCylinder
         try {
-        double volume = PuzzleControl.calcCylinder(dHeight, dRadius);
+            double volume = PuzzleControl.calcCylinder(dHeight, dRadius);
         } catch (PuzzleControlException me) {
-            ErrorView.display(this.getClass().getName(),me.getMessage());
+            ErrorView.display(this.getClass().getName(), me.getMessage());
             return false;
         }
         //if calcCylinder is not successful then display error and return
-        
-            this.console.println("Good job, You opened the door!");
-            return true;
-        
+
+        this.console.println("Good job, You opened the door!");
+        return true;
+
     }
 }

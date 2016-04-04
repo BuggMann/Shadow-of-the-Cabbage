@@ -12,15 +12,13 @@ import java.util.Objects;
  *
  * @author Scott
  */
-public class Player implements Serializable{
-    
+public class Player implements Serializable {
+
     private String name;
     private double bossesKilled;
 
     public Player() {
     }
-    
-    
 
     public String getName() {
         return name;
@@ -71,6 +69,5 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "name=" + name + ", bossesKilled=" + bossesKilled + '}';
     }
-    
-    
+
 }

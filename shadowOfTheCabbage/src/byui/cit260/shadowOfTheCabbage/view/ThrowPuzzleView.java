@@ -42,7 +42,7 @@ public class ThrowPuzzleView extends View {
         try {
             dHeight = Double.parseDouble(height);
         } catch (NumberFormatException nf) {
-            ErrorView.display(this.getClass().getName(),"\n You must enter a valid number. Try again.");
+            ErrorView.display(this.getClass().getName(), "\n You must enter a valid number. Try again.");
             return false;
         }
         //set promptMessage equal to "enter the distance"
@@ -54,14 +54,14 @@ public class ThrowPuzzleView extends View {
         try {
             dDistance = Double.parseDouble(distance);
         } catch (NumberFormatException nf) {
-            ErrorView.display(this.getClass().getName(),"\n You must enter a valid number. Try again.");
+            ErrorView.display(this.getClass().getName(), "\n You must enter a valid number. Try again.");
             return false;
         }
         //call control function to perform task
         try {
             double angle = PuzzleControl.calcAngle(dHeight, dDistance);
         } catch (PuzzleControlException me) {
-            ErrorView.display(this.getClass().getName(),me.getMessage());
+            ErrorView.display(this.getClass().getName(), me.getMessage());
             return false;
         }
         this.console.println("Your throw was straight! The beast is dead!");

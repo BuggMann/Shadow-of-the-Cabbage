@@ -13,10 +13,10 @@ import java.io.Serializable;
  * @author heapc_000
  */
 public class Map implements Serializable {
-    
+
     private int rowCount;
     private int columnCount;
-    
+
     private Location[][] locations;
 
     public Map() {
@@ -24,28 +24,27 @@ public class Map implements Serializable {
 
     public Map(int rowCount, int columnCount) {
         if (rowCount < 1 || columnCount < 1) {
-            ErrorView.display(this.getClass().getName(),"The number of rows and columns must be > 0");
+            ErrorView.display(this.getClass().getName(), "The number of rows and columns must be > 0");
             return;
         }
-        
+
         this.rowCount = rowCount;
         this.columnCount = columnCount;
-        
+
         this.locations = new Location[rowCount][columnCount];
-        
+
         for (int row = 0; row < rowCount; row++) {
             for (int column = 0; column < columnCount; column++) {
-                
+
                 Location location = new Location();
                 location.setColumn(column);
                 location.setRow(row);
-                
-                
+
                 locations[row][column] = location;
             }
         }
     }
-    
+
     public double getRowCount() {
         return rowCount;
     }
@@ -69,8 +68,6 @@ public class Map implements Serializable {
     public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -84,8 +81,6 @@ public class Map implements Serializable {
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -107,9 +102,5 @@ public class Map implements Serializable {
         }
         return true;
     }
-    
-    
-    
-    
-    
+
 }

@@ -13,24 +13,26 @@ import byui.cit260.shadowOfTheCabbage.exceptions.MoveControlException;
  * @author Scott
  */
 public class FirstView extends View {
-    public FirstView(){
+
+    public FirstView() {
         super("\n"
-              + "\nYou find yourself outside of a large"
-              + "\narching gateway with a large cabbage"
-              + "\nemblazoned on its keystone."
-              + "\nIt is the only obvious way foreward,"
-              + "\nand the gateway is NORTH.");
+                + "\nYou find yourself outside of a large"
+                + "\narching gateway with a large cabbage"
+                + "\nemblazoned on its keystone."
+                + "\nIt is the only obvious way foreward,"
+                + "\nand the gateway is NORTH.");
     }
+
     @Override
     public boolean doAction(String value) {
         try {
-        boolean move = MoveControl.moveDirection(value);
+            boolean move = MoveControl.moveDirection(value);
         } catch (MoveControlException me) {
-              ErrorView.display(this.getClass().getName(),me.getMessage()); 
-              return false;
+            ErrorView.display(this.getClass().getName(), me.getMessage());
+            return false;
         }
-            this.console.println("\n*** move function called ***");
-            return true;
-        
+        this.console.println("\n*** move function called ***");
+        return true;
+
     }
 }

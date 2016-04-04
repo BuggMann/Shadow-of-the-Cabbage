@@ -5,8 +5,6 @@
  */
 package shadowofthecabbage;
 
-
-
 import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Player;
 import byui.cit260.shadowOfTheCabbage.view.ErrorView;
@@ -29,48 +27,45 @@ public class ShadowOfTheCabbage {
     private static PrintWriter outfile = null;
     private static BufferedReader infile = null;
     private static PrintWriter logfile = null;
-    
+
     public static void main(String[] args) {
         try {
-        ShadowOfTheCabbage.infile =
-                new BufferedReader(new InputStreamReader(System.in));
-        
-        ShadowOfTheCabbage.outfile = new PrintWriter(System.out, true);
-        
-        String filePath = "log.text";
-        ShadowOfTheCabbage.logfile = new PrintWriter(filePath);
-       
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-        return;
-        
+            ShadowOfTheCabbage.infile
+                    = new BufferedReader(new InputStreamReader(System.in));
+
+            ShadowOfTheCabbage.outfile = new PrintWriter(System.out, true);
+
+            String filePath = "log.text";
+            ShadowOfTheCabbage.logfile = new PrintWriter(filePath);
+
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+            return;
+
         } catch (Throwable te) {
             ErrorView.display("ShadowOfTheCabbage", "te.getMessage()");
             te.printStackTrace();
-        }
-        
-        finally {
+        } finally {
             try {
                 if (ShadowOfTheCabbage.infile != null);
-                    ShadowOfTheCabbage.infile.close();
-                    
+                ShadowOfTheCabbage.infile.close();
+
                 if (ShadowOfTheCabbage.outfile != null);
-                    ShadowOfTheCabbage.outfile.close();
-                    
+                ShadowOfTheCabbage.outfile.close();
+
                 if (ShadowOfTheCabbage.logfile != null);
-                    ShadowOfTheCabbage.logfile.close();
+                ShadowOfTheCabbage.logfile.close();
             } catch (IOException ex) {
                 ErrorView.display("ShadowOfTheCabbage", "Error closing files");
                 return;
             }
-            
+
         }
     }
 
     public static Game getCurrentGame() {
         return currentGame;
     }
-            
 
     public static void setCurrentGame(Game currentGame) {
         ShadowOfTheCabbage.currentGame = currentGame;
@@ -107,7 +102,5 @@ public class ShadowOfTheCabbage {
     public static void setLogfile(PrintWriter logfile) {
         ShadowOfTheCabbage.logfile = logfile;
     }
-    
-    
-    
+
 }

@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author Scott
  */
-public class BossScene extends RegularScene{
-    
+public class BossScene extends RegularScene {
+
     private String enemy;
     private boolean finished;
 
@@ -70,7 +70,5 @@ public class BossScene extends RegularScene{
     public String toString() {
         return "BossScene{" + "enemy=" + enemy + ", finished=" + finished + '}';
     }
-    
-    
-           
+
 }

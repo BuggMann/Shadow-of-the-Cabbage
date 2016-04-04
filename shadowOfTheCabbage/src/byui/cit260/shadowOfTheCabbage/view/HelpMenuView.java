@@ -27,8 +27,8 @@ public class HelpMenuView extends View {
                 + "\nI - Displays Inventory"
                 + "\nT - Displays Trophy Menu"
                 + "\nS - Displays Strength of Strongest Monster"
-                + "\nP - Print Monster Information To Document"
-                + "\nB - Back (Main Menu)");
+                + "\nQ - Back (Main Menu)"
+                + "\nP - Print Monster Information To Document");
     }
 
     @Override
@@ -56,7 +56,7 @@ public class HelpMenuView extends View {
                 this.printStats();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection *** Try Again");
                 break;
         }
 

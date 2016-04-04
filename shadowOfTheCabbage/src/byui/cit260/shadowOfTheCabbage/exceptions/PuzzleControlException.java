@@ -9,7 +9,7 @@ package byui.cit260.shadowOfTheCabbage.exceptions;
  *
  * @author heapc_000
  */
-public class PuzzleControlException extends Exception{
+public class PuzzleControlException extends Exception {
 
     public PuzzleControlException() {
     }
@@ -29,6 +29,5 @@ public class PuzzleControlException extends Exception{
     public PuzzleControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
         super(string, thrwbl, bln, bln1);
     }
-    
-    
+
 }

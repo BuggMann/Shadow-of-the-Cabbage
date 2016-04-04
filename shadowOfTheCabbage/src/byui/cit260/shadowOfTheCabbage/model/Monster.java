@@ -46,11 +46,10 @@ public enum Monster implements Serializable {
     public Game getGame() {
         return game;
     }
-    
+
     @Override
     public String toString() {
-        return  monsterName + " - " + monsterType + ", strength: " + str;
+        return monsterName + " - " + monsterType + ", strength: " + str;
     }
-    
 
 }

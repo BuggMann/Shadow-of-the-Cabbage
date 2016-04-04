@@ -14,14 +14,14 @@ import java.util.Objects;
  * @author heapc_000
  */
 public enum Actor implements Serializable {
-   Eponine("She is your lovely lady friend."),
-   HoboJoe("He is a very old and wise guy");
+    Eponine("She is your lovely lady friend."),
+    HoboJoe("He is a very old and wise guy");
     private final String description;
     private final Point location;
 
     Actor(String description) {
         this.description = description;
-        location = new Point(1,1);
+        location = new Point(1, 1);
     }
 
     public String getDescription() {
@@ -31,14 +31,10 @@ public enum Actor implements Serializable {
     public Point getLocation() {
         return location;
     }
-    
-    
 
     @Override
     public String toString() {
         return "Actor{" + "description=" + description + ", location=" + location + '}';
     }
 
-   
-    
 }

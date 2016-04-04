@@ -16,29 +16,30 @@ import shadowofthecabbage.ShadowOfTheCabbage;
  * @author Scott
  */
 public class MainMenuView extends View {
-   
-        public MainMenuView(){
-            super("\n"
-              + "\n------------------------"
-              + "\n| Main Menu            |"
-              + "\n------------------------"
-              + "\nN - New Game"
-              + "\nL - Load Game"
-              + "\nS - Save Game"
-              + "\nH - Help Menu"
-              + "\nI - Inventory"
-              + "\nM - Map"
-              + "\nC - Cylinder View"
-              + "\nP - Puzzle View"
-              + "\nF - Forest View"
-              + "\nO - First View"
-              + "\nQ - Quit");
+
+    public MainMenuView() {
+        super("\n"
+                + "\n------------------------"
+                + "\n| Main Menu            |"
+                + "\n------------------------"
+                + "\nN - New Game"
+                + "\nL - Load Game"
+                + "\nS - Save Game"
+                + "\nH - Help Menu"
+                + "\nI - Inventory"
+                + "\nM - Map"
+                + "\nC - Cylinder View"
+                + "\nP - Puzzle View"
+                + "\nF - Forest View"
+                + "\nO - First View"
+                + "\nQ - Quit");
     }
+
     @Override
     public boolean doAction(String value) {
-        
+
         value = value.toUpperCase();
-        
+
         switch (value) {
             case "N":
                 this.startNewGame();
@@ -68,30 +69,30 @@ public class MainMenuView extends View {
                 this.displayInventory();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection *** Try Again");
                 break;
         }
-        
+
         return false;
     }
 
     private void startNewGame() {
-       GameControl.createNewGame(ShadowOfTheCabbage.getPlayer()); 
-       
-       ActionMenuView actionMenu = new ActionMenuView();
-       actionMenu.display();
+        GameControl.createNewGame(ShadowOfTheCabbage.getPlayer());
+
+        ActionMenuView actionMenu = new ActionMenuView();
+        actionMenu.display();
     }
 
     private void loadGame() {
         this.console.println("\nSelect the game to be loaded");
         String filePath = this.getInput();
-        
+
         try {
             GameControl.getSavedGame(filePath);
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
-        
+
         ActionMenuView actionMenu = new ActionMenuView();
         actionMenu.display();
     }
@@ -99,7 +100,7 @@ public class MainMenuView extends View {
     private void saveGame() {
         this.console.println("\nSelect the file where you want to save your game");
         String filePath = this.getInput();
-        
+
         try {
             GameControl.saveGame(ShadowOfTheCabbage.getCurrentGame(), filePath);
         } catch (Exception ex) {
@@ -108,21 +109,21 @@ public class MainMenuView extends View {
     }
 
     private void displayHelpMenuView() {
-       
-       HelpMenuView helpMenu = new HelpMenuView();
-       helpMenu.display();
+
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
     }
 
     private void displayCylinderView() {
         CylinderView volume = new CylinderView();
         volume.display();
     }
-    
+
     private void displayThrowPuzzleView() {
         ThrowPuzzleView angle = new ThrowPuzzleView();
         angle.display();
     }
-    
+
     private void displayForestView() {
         ForestView forest = new ForestView();
         forest.display();
@@ -134,11 +135,11 @@ public class MainMenuView extends View {
     }
 
     private void displayInventory() {
-       Item[] items = Item.values();
-        
-        for (Item item: items){
+        Item[] items = Item.values();
+
+        for (Item item : items) {
             this.console.println(item.getName() + " - " + item.getDescription());
         }
     }
-     
+
 }

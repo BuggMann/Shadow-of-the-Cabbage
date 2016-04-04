@@ -29,6 +29,5 @@ public class MaxStrengthControlException extends Exception {
     public MaxStrengthControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
         super(string, thrwbl, bln, bln1);
     }
-    
-    
+
 }

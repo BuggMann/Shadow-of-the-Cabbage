@@ -7,23 +7,22 @@ package byui.cit260.shadowOfTheCabbage.model;
 
 import java.io.Serializable;
 
-
 /**
  *
  * @author heapc_000
  */
 public class Game implements Serializable {
-    
+
     private double totalTime;
 
     private Player player;
     private Map map;
-    
-    private Item[] inventory; 
-    
+
+    private Item[] inventory;
+
     public Game() {
-    } 
-  
+    }
+
     public double getTotalTime() {
         return totalTime;
     }
@@ -56,11 +55,6 @@ public class Game implements Serializable {
         this.inventory = inventory;
     }
 
-    
-    
-    
-    
-
     @Override
     public int hashCode() {
         int hash = 7;
@@ -72,8 +66,6 @@ public class Game implements Serializable {
     public String toString() {
         return "Game{" + "getTime=" + totalTime + '}';
     }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -92,6 +84,5 @@ public class Game implements Serializable {
         }
         return true;
     }
-    
-    
+
 }

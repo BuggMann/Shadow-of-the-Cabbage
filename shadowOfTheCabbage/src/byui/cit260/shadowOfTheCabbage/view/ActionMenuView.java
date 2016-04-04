@@ -11,6 +11,7 @@ import byui.cit260.shadowOfTheCabbage.model.Game;
 import byui.cit260.shadowOfTheCabbage.model.Item;
 import byui.cit260.shadowOfTheCabbage.model.Location;
 import byui.cit260.shadowOfTheCabbage.model.Map;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 import shadowofthecabbage.ShadowOfTheCabbage;
@@ -32,6 +33,7 @@ public class ActionMenuView extends View {
                 + "\nUse - Use item already in inventory"
                 + "\nSave - Save game at current location"
                 + "\nI - Display inventory"
+                + "\nIP - Print Inventory"
                 + "\nNorth - Moves North"
                 + "\nEast - Moves East"
                 + "\nSouth - Moves South"
@@ -61,7 +63,10 @@ public class ActionMenuView extends View {
                 this.save();
                 break;
             case "I":
-                this.displayInventory();
+                this.displayInventory(this.console);
+                break;
+            case "IP":
+                this.displayPrintInventory();
                 break;
             case "NORTH":
                 this.moveNorth();
@@ -76,7 +81,7 @@ public class ActionMenuView extends View {
                 this.moveWest();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection *** Try Again");
                 break;
         }
 
@@ -90,9 +95,10 @@ public class ActionMenuView extends View {
             this.console.println("\n--------------------------");
             for (int j = 0; j < locations[0].length; j++) {
                 if (locations[i][j].isVisited()) {
-                    symbol = locations[i][j].getScene().getMapSymbol();  
+                    symbol = locations[i][j].getScene().getMapSymbol();
+                } else {
+                    symbol = "??";
                 }
-                else symbol = "??";
                 this.console.print("| " + symbol + " ");
             }
             this.console.print("|");
@@ -116,16 +122,21 @@ public class ActionMenuView extends View {
         this.console.println("\n*** save() function called*** ");
     }
 
-    private void displayInventory() {
+    public static void displayInventory(PrintWriter outFile) {
         Item[] items = Item.values();
         items = ItemSortControl.doSelectionSort(items);
-        for (Item item : items) {
-            this.console.println(item.getName() + " - " + item.getItemType() + ", Description:" + item.getDescription());
-        }
-            
-        
-    } 
 
+        outFile.println("\n\n             Inventory List             ");
+        outFile.printf("%n%-15s%-20s%-50s", "Name", "Item Type", "Description");
+        outFile.printf("%n%-15s%-20s%-50s", "----", "---------", "-----------");
+
+        for (Item item : items) {
+            outFile.printf("%n%-15s%-20s%-50s", item.getName(), item.getItemType(), item.getDescription());
+
+        }
+        outFile.flush();
+
+    }
 
     private void moveNorth() {
         this.console.println("\n*** moveNorth() function called*** ");
@@ -141,6 +152,11 @@ public class ActionMenuView extends View {
 
     private void moveWest() {
         this.console.println("\n*** moveWest() function called*** ");
+    }
+
+    private void displayPrintInventory() {
+        InventoryListView inventory = new InventoryListView();
+        inventory.display();
     }
 
 }

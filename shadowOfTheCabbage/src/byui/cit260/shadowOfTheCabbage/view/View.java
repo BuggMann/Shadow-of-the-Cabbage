@@ -17,7 +17,7 @@ import shadowofthecabbage.ShadowOfTheCabbage;
 public abstract class View implements ViewInterface {
 
     protected String displayMessage;
-    
+
     protected final BufferedReader keyboard = ShadowOfTheCabbage.getInfile();
     protected final PrintWriter console = ShadowOfTheCabbage.getOutfile();
 
@@ -46,25 +46,25 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        
+
         String value = null; // value to be returned
         boolean valid = false; // initialize to not value
         try {
-        while (!valid) { // loop while an invalid value is entered
-            this.console.println("\n" + this.displayMessage);
+            while (!valid) { // loop while an invalid value is entered
+                this.console.println("\n" + this.displayMessage);
 
-            value = this.keyboard.readLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trail blanks
+                value = this.keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leading and trail blanks
 
-            if (value.length() < 1) { // value is blank
-                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
-                continue;
+                if (value.length() < 1) { // value is blank
+                    ErrorView.display(this.getClass().getName(), "\nInvalid value: value can not be blank");
+                    continue;
+                }
+
+                break; // end the loop
             }
-
-            break; // end the loop
-        }
         } catch (Exception e) {
-            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
         return value;
     }

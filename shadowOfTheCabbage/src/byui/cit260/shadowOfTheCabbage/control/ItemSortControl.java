@@ -12,19 +12,20 @@ import byui.cit260.shadowOfTheCabbage.model.Item;
  * @author heapc_000
  */
 public class ItemSortControl {
-    public static Item[] doSelectionSort(Item[] arr){
-         
-        for (int i = 0; i < arr.length - 1; i++)
-        {
+
+    public static Item[] doSelectionSort(Item[] arr) {
+
+        for (int i = 0; i < arr.length - 1; i++) {
             int index = i;
-            for (int j = i + 1; j < arr.length; j++){
+            for (int j = i + 1; j < arr.length; j++) {
                 String firstName = arr[j].getName();
                 String secondName = arr[index].getName();
                 int result = firstName.compareTo(secondName);
-                if (result < 0)
+                if (result < 0) {
                     index = j;
+                }
             }
-            Item smallerNumber = arr[index]; 
+            Item smallerNumber = arr[index];
             arr[index] = arr[i];
             arr[i] = smallerNumber;
         }
