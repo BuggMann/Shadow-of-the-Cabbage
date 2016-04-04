@@ -27,6 +27,7 @@ public class HelpMenuView extends View {
                 + "\nI - Displays Inventory"
                 + "\nT - Displays Trophy Menu"
                 + "\nS - Displays Strength of Strongest Monster"
+                + "\nP - Print Monster Information To Document"
                 + "\nB - Back (Main Menu)");
     }
 
@@ -50,6 +51,9 @@ public class HelpMenuView extends View {
                 break;
             case "S":
                 this.displayStrength();
+                break;
+            case "P":
+                this.printStats();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),"\n*** Invalid Selection *** Try Again");
@@ -87,5 +91,9 @@ public class HelpMenuView extends View {
         MaxStrengthControl maxStrength = new MaxStrengthControl();
         int maxStr = maxStrength.calcMaxStrength();
         this.console.println(maxStr);
+    }
+
+    private void printStats() {
+        
     }
 }
