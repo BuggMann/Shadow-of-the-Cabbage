@@ -6,8 +6,11 @@
 package byui.cit260.shadowOfTheCabbage.view;
 
 import byui.cit260.shadowOfTheCabbage.control.GameControl;
+import byui.cit260.shadowOfTheCabbage.control.ItemSortControl;
 import byui.cit260.shadowOfTheCabbage.control.MaxStrengthControl;
+import byui.cit260.shadowOfTheCabbage.model.Item;
 import byui.cit260.shadowOfTheCabbage.model.Monster;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import shadowofthecabbage.ShadowOfTheCabbage;
 
@@ -28,7 +31,8 @@ public class HelpMenuView extends View {
                 + "\nT - Displays Trophy Menu"
                 + "\nS - Displays Strength of Strongest Monster"
                 + "\nQ - Back (Main Menu)"
-                + "\nP - Print Monster Information To Document");
+                + "\nP - Print Monster Information"
+                + "\nMP - Print Monster Information To Document");
     }
 
     @Override
@@ -53,6 +57,9 @@ public class HelpMenuView extends View {
                 this.displayStrength();
                 break;
             case "P":
+                this.displayStrengthStats(this.console);
+                break;
+            case "MP":
                 this.printStats();
                 break;
             default:
@@ -94,6 +101,23 @@ public class HelpMenuView extends View {
     }
 
     private void printStats() {
-        
+        StrengthListView strength = new StrengthListView();
+        strength.display();
+    }
+    
+    
+    public static void displayStrengthStats(PrintWriter outFile) {
+        Monster[] monsters = Monster.values();
+
+        outFile.println("\n\n     Monster List             ");
+        outFile.printf("%n%-15s%-20s%-50s", "Name", "Monster Type", "Strength Points");
+        outFile.printf("%n%-15s%-20s%-50s", "----", "------------", "---------------");
+
+        for (Monster monster : monsters) {
+            outFile.printf("%n%-15s%-20s%-50s", monster.getMonsterName(), monster.getMonsterType(), monster.getStr());
+
+        }
+        outFile.flush();
+
     }
 }

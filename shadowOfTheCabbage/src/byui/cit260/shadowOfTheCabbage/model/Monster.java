@@ -16,7 +16,7 @@ public enum Monster implements Serializable {
     Tiger("Tiger", "Ira", 200),
     Baboon("Baboon", "Paciscendo", 300),
     Bear("Bear", "Depressione", 400),
-    Fox("fox", "acceptatio", 1000);
+    Fox("Fox", "Acceptatio", 1000);
 
     private final String monsterType;
     private final String monsterName;
