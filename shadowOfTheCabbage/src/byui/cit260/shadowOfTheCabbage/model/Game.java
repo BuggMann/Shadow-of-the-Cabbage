@@ -17,7 +17,7 @@ public class Game implements Serializable {
 
     private Player player;
     private Map map;
-
+    private Location currentLocation;
     private Item[] inventory;
 
     public Game() {
@@ -54,6 +54,16 @@ public class Game implements Serializable {
     public void setInventory(Item[] inventory) {
         this.inventory = inventory;
     }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+    
+    
 
     @Override
     public int hashCode() {

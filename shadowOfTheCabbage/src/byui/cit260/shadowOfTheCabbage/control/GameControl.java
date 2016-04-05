@@ -32,6 +32,8 @@ public class GameControl {
 
         Map map = MapControl.createMap();
         game.setMap(map);
+        
+        game.setCurrentLocation(map.getLocations()[0][0]);
     }
 
     public static void saveGame(Game game, String filePath) throws GameControlException, IOException {

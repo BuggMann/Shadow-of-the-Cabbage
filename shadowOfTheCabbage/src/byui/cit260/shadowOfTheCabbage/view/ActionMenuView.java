@@ -34,11 +34,8 @@ public class ActionMenuView extends View {
                 + "\nSave - Save game at current location"
                 + "\nI - Display inventory"
                 + "\nIP - Print Inventory"
-                + "\nNorth - Moves North"
-                + "\nEast - Moves East"
-                + "\nSouth - Moves South"
-                + "\nWest - Moves North"
-                + "\nQ - Go Back (Help Menu)");
+                + "\nQ - Go Back (Help Menu)"
+                + "\nF - first view");
     }
 
     @Override
@@ -68,17 +65,8 @@ public class ActionMenuView extends View {
             case "IP":
                 this.displayPrintInventory();
                 break;
-            case "NORTH":
-                this.moveNorth();
-                break;
-            case "EAST":
-                this.moveEast();
-                break;
-            case "SOUTH":
-                this.moveSouth();
-                break;
-            case "WEST":
-                this.moveWest();
+            case "F":
+                this.displayFirstView();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(), "\n*** Invalid Selection *** Try Again");
@@ -138,25 +126,14 @@ public class ActionMenuView extends View {
 
     }
 
-    private void moveNorth() {
-        this.console.println("\n*** moveNorth() function called*** ");
-    }
-
-    private void moveEast() {
-        this.console.println("\n*** moveEast() function called*** ");
-    }
-
-    private void moveSouth() {
-        this.console.println("\n*** moveSouth() function called*** ");
-    }
-
-    private void moveWest() {
-        this.console.println("\n*** moveWest() function called*** ");
-    }
-
     private void displayPrintInventory() {
         InventoryListView inventory = new InventoryListView();
         inventory.display();
+    }
+    
+    private void displayFirstView() {
+        FirstView first = new FirstView();
+        first.display();
     }
 
 }

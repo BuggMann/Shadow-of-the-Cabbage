@@ -5,6 +5,7 @@
  */
 package byui.cit260.shadowOfTheCabbage.model;
 
+import byui.cit260.shadowOfTheCabbage.view.View;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -16,6 +17,7 @@ public class PuzzleScene extends RegularScene {
 
     private boolean door;
     private String puzzle;
+    
 
     public PuzzleScene() {
         super();
@@ -36,6 +38,10 @@ public class PuzzleScene extends RegularScene {
     public void setPuzzle(String puzzle) {
         this.puzzle = puzzle;
     }
+
+    
+    
+    
 
     @Override
     public int hashCode() {

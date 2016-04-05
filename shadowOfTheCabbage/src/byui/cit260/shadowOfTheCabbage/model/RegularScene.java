@@ -5,6 +5,7 @@
  */
 package byui.cit260.shadowOfTheCabbage.model;
 
+import byui.cit260.shadowOfTheCabbage.view.View;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -18,6 +19,7 @@ public class RegularScene implements Serializable {
     private String hint;
     private String mapSymbol;
     private boolean blocked;
+     private View view;
 
     public RegularScene() {
     }
@@ -53,6 +55,16 @@ public class RegularScene implements Serializable {
     public void setBlocked(boolean blocked) {
         this.blocked = blocked;
     }
+
+    public View getView() {
+        return view;
+    }
+
+    public void setView(View view) {
+        this.view = view;
+    }
+    
+    
 
     @Override
     public int hashCode() {

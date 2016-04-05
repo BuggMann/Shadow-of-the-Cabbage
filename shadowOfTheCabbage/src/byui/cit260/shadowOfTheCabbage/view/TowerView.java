@@ -5,25 +5,19 @@
  */
 package byui.cit260.shadowOfTheCabbage.view;
 
-import byui.cit260.shadowOfTheCabbage.control.MoveControl;
-import byui.cit260.shadowOfTheCabbage.exceptions.MoveControlException;
-
 /**
  *
  * @author heapc_000
  */
-public class ForestView extends View {
+public class TowerView extends View{
 
-    public ForestView() {
-        super("You are in a large forest with very tall ancient trees. "
-                + "\n You can hear a strange noise in the distance."
-                + "\n "
-                + "\n enter move to continue traveling");
+    public TowerView() {
+                super("\nYou have arrived at the towerof doom that houses your lady love."
+                    + "\nEnter move then go south to climb the tower");
     }
 
     @Override
     public boolean doAction(String value) {
-        
         value = value.toUpperCase();
 
         switch (value) {
@@ -41,4 +35,7 @@ public class ForestView extends View {
             MoveView move = new MoveView();
             move.display();
         }
+    
+    
+    
 }

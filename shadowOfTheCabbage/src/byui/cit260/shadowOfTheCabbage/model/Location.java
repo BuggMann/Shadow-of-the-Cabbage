@@ -13,8 +13,8 @@ import java.io.Serializable;
  */
 public class Location implements Serializable {
 
-    private double row;
-    private double column;
+    private int row;
+    private int column;
     private boolean visited;
 
     private RegularScene scene;
@@ -23,19 +23,19 @@ public class Location implements Serializable {
         this.visited = false;
     }
 
-    public double getRow() {
+    public int getRow() {
         return row;
     }
 
-    public void setRow(double row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
-    public double getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(double column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
